@@ -5,9 +5,9 @@ description: "이 포스트에서는 정적 웹사이트를 이용한 블로그�
 date: "2020-03-25"
 author: Justin-Yoo
 tags:
-- gitops
 - azure-durable-functions
 - github-actions
+- gitops
 - event-scheduling
 cover: https://sa0blogs.blob.core.windows.net/aliencube/2020/03/scheduling-posts-with-gitops-durable-functions-and-github-actions-00.png
 fullscreen: true
