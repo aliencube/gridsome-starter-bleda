@@ -288,6 +288,8 @@ https://youtu.be/GVNK8HcF-xY
 
 [az cog faceapi]: https://docs.microsoft.com/ko-kr/azure/cognitive-services/face/overview?WT.mc_id=aliencubeorg-blog-juyoo
 
+[az st blob]: https://docs.microsoft.com/ko-kr/azure/storage/blobs/storage-blobs-overview?WT.mc_id=aliencubeorg-blog-juyoo
+
 [powapp]: https://powerapps.microsoft.com/ko-kr/?WT.mc_id=aliencubeorg-blog-juyoo
 [powapp cuscon]: https://docs.microsoft.com/ko-kr/connectors/custom-connectors/use-custom-connector-powerapps?WT.mc_id=aliencubeorg-blog-juyoo
 [powapp cuscon openapi]: https://docs.microsoft.com/ko-kr/connectors/custom-connectors/define-openapi-definition?WT.mc_id=aliencubeorg-blog-juyoo
