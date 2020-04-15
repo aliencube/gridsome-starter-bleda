@@ -13,7 +13,7 @@ cover: https://sa0blogs.blob.core.windows.net/aliencube/2020/04/building-online-
 fullscreen: true
 ---
 
-이 포스트는 [파워 앱][powapp], [애저 펑션][az func], [애저 안면 인식 API][az cog faceapi]를 이용해서 학교 선생님들이 온라인으로 학생들 출석체크 하는 앱을 만들 때 필요한 내용들을 정리해보는 시리즈의 세번째입니다.
+> 이 포스트는 [파워 앱][powapp], [애저 펑션][az func], [애저 안면 인식 API][az cog faceapi]를 이용해서 학교 선생님들이 온라인으로 학생들 출석체크 하는 앱을 만들 때 필요한 내용들을 정리해보는 시리즈의 세번째입니다.
 
 1. [애저 펑션을 이용해서 브라우저에서 애저 블롭 저장소로 스크린샷 이미지 저장하기][post series 1]
 2. [애저 펑션과 안면 인식 API를 이용해서 본인 인증하기][post series 2]
