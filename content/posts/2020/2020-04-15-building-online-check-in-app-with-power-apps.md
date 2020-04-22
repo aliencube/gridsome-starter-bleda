@@ -1,5 +1,5 @@
 ---
-title: "[COVID-19 시리즈 #3] 파워앱으로 학생들 온라인 출석부 앱 만들기"
+title: "[COVID-19 시리즈 #3] 파워 앱과 얼굴 인식 API를 이용해서 출석 체크 앱 만들기"
 slug: building-online-check-in-app-with-power-apps
 description: "이 포스트에서는 파워앱과 애저 펑션, 애저 안면 인식 API로 학생들의 온라인 출석부 앱을 만드는 방법에 대해 알아봅니다."
 date: "2020-04-15"
