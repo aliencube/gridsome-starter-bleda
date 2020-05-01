@@ -1,7 +1,7 @@
 ---
 title: "애저 펑션에서 애저 키 저장소 값을 참조하는 세 가지 방법"
 slug: 3-ways-referencing-azure-key-vault-from-azure-functions
-description: "이 포스트에서는 애저 Durable Functions의 Stateful 속성을 이용해서 RequestBin 앱을 만들어 보겠습니다."
+description: "이 포스트에서는 애저 펑션에서 애저 키 저장소 값을 참조하는 세 가지 방법에 대해 논의해 보겠습니다."
 date: "2020-04-30"
 author: Justin-Yoo
 tags:
