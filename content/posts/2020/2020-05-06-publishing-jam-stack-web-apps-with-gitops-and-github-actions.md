@@ -53,9 +53,15 @@ https://gist.github.com/justinyoo/b1793b9fe678641de6308b956c3d77d1?file=03-pr-fl
 
 https://gist.github.com/justinyoo/b1793b9fe678641de6308b956c3d77d1?file=04-pr-flow-4.yaml
 
-이렇게 함으로써 아래와 같이 전체 워크플로우를 자동화시켰다. 이제는 PR만 생성하고 그 요청 본문에 타임스탬프만 넣어두면 자동으로 포스트 발행 예약이 진행되고 그에 맞춰 블로그 포스트가 발행된다.
+이렇게 함으로써 아래처럼 수동으로 API 요청을 보내는 대신
+
+![][image-05]
+
+PR 워크플로우가 자동으로 모든 것을 해결한다.
 
 ![][image-04]
+
+이제는 PR만 생성하고 그 요청 본문에 타임스탬프만 넣어두면 자동으로 포스트 발행 예약이 진행되고 그에 맞춰 블로그 포스트가 발행된다.
 
 ---
 
@@ -66,6 +72,7 @@ https://gist.github.com/justinyoo/b1793b9fe678641de6308b956c3d77d1?file=04-pr-fl
 [image-02]: https://sa0blogs.blob.core.windows.net/aliencube/2020/05/publishing-jam-stack-web-apps-with-gitops-and-github-actions-02.png
 [image-03]: https://sa0blogs.blob.core.windows.net/aliencube/2020/05/publishing-jam-stack-web-apps-with-gitops-and-github-actions-03.png
 [image-04]: https://sa0blogs.blob.core.windows.net/aliencube/2020/05/publishing-jam-stack-web-apps-with-gitops-and-github-actions-04.png
+[image-05]: https://sa0blogs.blob.core.windows.net/aliencube/2020/05/publishing-jam-stack-web-apps-with-gitops-and-github-actions-05.png
 
 [post gitops schedule]: /ko/2020/03/25/scheduling-posts-with-gitops-durable-functions-and-github-actions/
 
