@@ -2,7 +2,7 @@
 title: "GitOps와 GitHub Actions를 이용해서 JAM 스택 웹사이트 자동 배포하기"
 slug: publishing-jam-stack-web-apps-with-gitops-and-github-actions
 description: "이 포스트에서는 GitHub Actions와 GitOps를 이용해서 JAM 스택 기반 웹사이트를 자동으로 배포하는 방법을 알아봅니다."
-date: "2020-05-07"
+date: "2020-05-06"
 author: Justin-Yoo
 tags:
 - gitops
