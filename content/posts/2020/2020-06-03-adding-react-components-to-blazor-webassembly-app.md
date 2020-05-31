@@ -40,6 +40,8 @@ https://gist.github.com/justinyoo/e6a99fffa35d032f70e937c7ccf14ddb?file=01-dotne
 
 [Fluent UI][fluentui]는 [Microsoft 365][m365]에 포함된 애플리케이션에 적용된 UI 프레임워크이다. 이 프레임워크에는 현재 [React][reactjs]를 적용했는데, 웹 애플리케이션을 제작할 때 컴포넌트 방식으로 추가하기 쉽게 되어 있다. 이 포스트에서는 [Progress Indicator][fluentui progressindicator] 콘트롤을 이용해서 `Click me` 버튼을 누를 때 마다 콘트롤이 변하는 것을 간단하게 구현해 보자. 해당 콘트롤 문서 페이지에 있는 [CodePen][codepen]을 통해 제공되는 예제 코드를 활용하면 된다.
 
+> 원래 [Hassan Habib][hassan]이 [Blazor 서버][blazor server]를 이용한 예제를 [유튭][hassan video]에 올려놓은 것이 있다. 이를 참고해서 [Blazor 웹 어셈블리][blazor wasm]에 맞게 변형시켰다.
+
 먼저 `index.html` 파일을 열어 아래와 같이 [React][reactjs] 관련 자바스크립트를 CDN으로부터 가져온다.
 
 https://gist.github.com/justinyoo/e6a99fffa35d032f70e937c7ccf14ddb?file=02-add-react-library.html
@@ -92,3 +94,6 @@ https://gist.github.com/justinyoo/e6a99fffa35d032f70e937c7ccf14ddb?file=04-updat
 [fluentui]: https://developer.microsoft.com/fluentui/?WT.mc_id=aliencubeorg-blog-juyoo
 [fluentui progressindicator]: https://developer.microsoft.com/fluentui?WT.mc_id=aliencubeorg-blog-juyoo#/controls/web/progressindicator
 [fluentui progressindicator codepen]: https://codepen.io/pen/?&editable=true=https%3A%2F%2Fdeveloper.microsoft.com%2Fen-us%2Ffluentui%3FWT.mc_id%3Daliencubeorg-blog-juyoo
+
+[hassan]: https://twitter.com/HassanRezkHabib
+[hassan video]: https://youtu.be/E4xUCxOL_PI
