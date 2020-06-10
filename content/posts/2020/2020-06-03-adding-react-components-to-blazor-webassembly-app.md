@@ -65,12 +65,14 @@ https://gist.github.com/justinyoo/e6a99fffa35d032f70e937c7ccf14ddb?file=04-updat
 이렇게 해서 [Blazor 웹 어셈블리][blazor wasm] 애플리케이션에 [React][reactjs] 기반의 컴포넌트를 추가하는 방법에 대해 알아보았다. 여기서 고려하지 않은 부분이 몇 가지가 있는데,
 
 * 카운터 값이 바뀔 때 마다 컴포넌트를 새롭게 렌더링한다. 새롭게 렌더링하는 대신, [Blazor][blazor] 애플리케이션이 자체적으로 [상태 관리][blazor statemanagement]가 가능하므로 이를 활용하는 방법이 더 좋을 수도 있다. 다만, 복잡도가 증가한다는 점도 고려해 두도록 하자.
-* [React][reactjs] 라이브러리를 CDN에 직접 링크했다. npm 패키지를 이용할 수도 있는데, 이는 다음 포스트에서 다뤄보기로 한다.
+* [React][reactjs] 라이브러리를 CDN에 직접 링크했다. npm 패키지를 이용할 수도 있는데, 이는 [다음 포스트][post next]에서 다뤄보기로 한다.
 
 
 [image-01]: https://sa0blogs.blob.core.windows.net/aliencube/2020/06/adding-react-components-to-blazor-webassembly-app-01.png
 [image-02]: https://sa0blogs.blob.core.windows.net/aliencube/2020/06/adding-react-components-to-blazor-webassembly-app-02.png
 [image-03]: https://sa0blogs.blob.core.windows.net/aliencube/2020/06/adding-react-components-to-blazor-webassembly-app-03.png
+
+[post next]: /ko/2020/06/10/adding-react-components-to-blazor-webassembly-app-by-nodejs/
 
 [gh sample]: https://github.com/devkimchi/Blazor-React-Sample
 
