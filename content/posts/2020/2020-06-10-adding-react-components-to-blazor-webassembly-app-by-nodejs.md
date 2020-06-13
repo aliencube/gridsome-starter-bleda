@@ -50,6 +50,8 @@ https://gist.github.com/justinyoo/224fa5fe1bfa2dca8dcdd0fc83c17251?file=03-npm-i
 
 https://gist.github.com/justinyoo/224fa5fe1bfa2dca8dcdd0fc83c17251?file=04-npm-install-save-dev.sh
 
+> **참고** 맥OS 사용자의 경우, 만약 `webpack` 또는 `webpack-cli`를 설치하는 과정에서 `node-gyp` 관련 에러가 난다면, [이 이슈 페이지][node-gyp issue]를 참조해서 문제를 해결한다.
+
 여기서 다시 `src` 디렉토리를 만들고 난 후 그 아래 `index.js` 파일과 `progressbar.js` 파일을 생성한다. `progressbar.js` 파일에는 실제 로직이 들어가고, `index.js` 파일은 이 npm 패키지를 빌드해서 [Blazor 웹 어셈블리][blazor wasm]앱에서 사용하기 위한 일종의 루트 디렉토리라고 생각하면 좋다. 그러면 `progressbar.js` 파일에 아래와 같이 로직을 입력한다.
 
 https://gist.github.com/justinyoo/224fa5fe1bfa2dca8dcdd0fc83c17251?file=05-progressbar.js&highlights=1-3,5
@@ -119,6 +121,7 @@ https://gist.github.com/justinyoo/224fa5fe1bfa2dca8dcdd0fc83c17251?file=11-app.c
 [nodejs]: https://nodejs.org/
 [npmjs]: https://www.npmjs.com/
 
+[node-gyp issue]: https://github.com/nodejs/node-gyp/issues/569
 
 [fluentui]: https://developer.microsoft.com/fluentui/?WT.mc_id=aliencubeorg-blog-juyoo
 [fluentui progressindicator]: https://developer.microsoft.com/fluentui?WT.mc_id=aliencubeorg-blog-juyoo#/controls/web/progressindicator
