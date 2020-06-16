@@ -35,7 +35,7 @@ https://gist.github.com/justinyoo/fcba3e387d240a057e76a28f233fec82?file=01-dotne
 
 > [Blazor 웹 어셈블리][blazor wasm] 앱을 [애저 정적 웹 앱][az swa] 인스턴스에 배포하기 위한 기본 설정은 [Tim Heuer][tim twitter]의 [포스트][tim post]를 참조했다.
 
-위 리포지토리를 이용해서 [애저 정적 웹 앱][az swa] 인스턴스를 배포하는 방법은 [이 페이지][az swa build]를 참조한다. 그런데, 이 포스트를 쓰는 현 시점에서는 배포에 실패한다.
+위 리포지토리를 이용해서 [애저 정적 웹 앱][az swa] 인스턴스를 배포하는 방법은 [이 페이지][az swa build]를 참조한다. 그런데, 이 포스트를 쓰는 현 시점에서는 아래와 같이 배포에 실패한다.
 
 ![][image-02]
 
@@ -85,17 +85,17 @@ https://gist.github.com/justinyoo/fcba3e387d240a057e76a28f233fec82?file=06-api-r
 * JavaScript 펑션만 지원한다.
 * HTTP 바인딩만 지원한다.
 
-> 이 외에도 제약 사항이 좀 더 있는데, 자세한 사항은 [제약 사항][az swa api constraints]를 참조한다.
+> 이 외에도 제약 사항이 좀 더 있는데, 자세한 사항은 [제약 조건][az swa api constraints]을 참조한다.
 
 따라서, 이 제약 사항을 바탕으로 프록시 API를 만들어야 한다. 이렇게 만들어 놓은 샘플 코드는 [`BlazorProxySample` 프로젝트][gh sample proxy]를 참조한다. 아주 간단한 프록시 API이다. 아래 코드를 보면 이 프록시 API가 어떻게 작동하는지 알 수 있다. 환경 변수에 저장된 `API__BASE_URI`, `API__ENDPOINT`, `API__AUTH_KEY` 값을 통해 외부 API와 연결한다 (line #4-6). 당연하게도 이 환경 변수 값은 외부로 노출되지 않는다. 그리고, 프록시 API가 하는 일은 실제 API로 요청을 재구성해서 날려주는 것에 불과하다 (line #9-11).
 
-https://gist.github.com/justinyoo/fcba3e387d240a057e76a28f233fec82?file=07-proxy-http-trigger.js&highlights=4-6,9-11
+https://gist.github.com/justinyoo/fcba3e387d240a057e76a28f233fec82?file=07-proxy-http-trigger.js&highlights=4-6,9,11
 
 그리고, 위 코드에서 보이는 환경 변수 값을 아래 `local.settings.json` 파일에 저장한다 (line #5-7).
 
 https://gist.github.com/justinyoo/fcba3e387d240a057e76a28f233fec82?file=08-proxy-local-settings.json&highlights=5-7
 
-기본적인 설정은 끝났으니 아래 명령어를 통해 프록시 API를 실행시킨다. 이 프록시 API는 포트 번호를 `7072`로 바꿔서 실행시켜야 하는데, 앞서 외부 API를 로컬에서 실행시킬 때 이미 `7071`번 포트를 선점했기 때문이다.
+기본적인 설정은 끝났으니 아래 명령어를 통해 프록시 API를 실행시킨다. 이 때 프록시 API는 포트 번호를 `7071`이 아닌 다른 무언가로 바꿔서 실행시켜야 하는데, 앞서 외부 API를 로컬에서 실행시킬 때 이미 `7071`번 포트를 선점했기 때문이다. 여기서는 `7072`로 지정했다.
 
 https://gist.github.com/justinyoo/fcba3e387d240a057e76a28f233fec82?file=09-proxy-func-start.sh
 
@@ -114,7 +114,7 @@ https://gist.github.com/justinyoo/fcba3e387d240a057e76a28f233fec82?file=09-proxy
 
 https://gist.github.com/justinyoo/fcba3e387d240a057e76a28f233fec82?file=10-proxy-local-settings-cors.json&highlights=6-8
 
-이렇게 한 후 애저 펑션 앱, 프록시 API, Blazor 앱을 하나하나 차례로 실행시켜 보면 아래와 같다.
+이렇게 한 후 애저 펑션 앱, 프록시 API, Blazor 앱을 하나하나 차례로 실행시켜 보면 아래와 같다. 아래 그림에서는 오른쪽부터 애저 펑션 앱, 프록시 API, Blazor 앱이다.
 
 ![][image-07]
 
@@ -147,7 +147,7 @@ https://gist.github.com/justinyoo/fcba3e387d240a057e76a28f233fec82?file=12-actio
 
 ---
 
-지금까지 [Blazor 웹 어셈블리][blazor wasm] 앱을 [애저 정적 웹 앱][az swa] 인스턴스에 배포하는 방법에 대해 알아 보았다. Blazor 앱만 배포하는 과정은 그닥 복잡하지는 않은데, 프록시 API까지 함께 배포하려면 좀 더 손이 많이 간다. 아직 프리뷰 상태이고 여전히 개선 중이니, 정식 출시가 되는 시점에서는 Blazor 앱 역시도 작동할 수 있기를 기대한다.
+지금까지 [Blazor 웹 어셈블리][blazor wasm] 앱을 [애저 정적 웹 앱][az swa] 인스턴스에 배포하는 방법에 대해 알아 보았다. Blazor 앱만 배포하는 과정은 깃헙 액션 워크플로우를 살짝만 수정하면 되므로 그닥 복잡하지는 않은데, 프록시 API까지 함께 배포하려면 좀 더 손이 많이 간다. 아직 프리뷰 상태이고 여전히 개선 중이니, 정식 출시가 되는 시점에서는 Blazor 앱 역시도 작동할 수 있기를 기대한다.
 
 
 [image-01]: https://sa0blogs.blob.core.windows.net/aliencube/2020/06/hosting-blazor-web-assembly-app-on-azure-static-webapp-01.png
