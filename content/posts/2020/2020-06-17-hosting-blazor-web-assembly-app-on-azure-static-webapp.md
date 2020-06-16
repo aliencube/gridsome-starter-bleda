@@ -13,6 +13,10 @@ cover: https://sa0blogs.blob.core.windows.net/aliencube/2020/06/hosting-blazor-w
 fullscreen: true
 ---
 
+* [Blazor 웹 애플리케이션에 React UI 컴포넌트 끼얹기][post series 1]
+* [Blazor 웹 애플리케이션에 node.js를 이용해 React UI 컴포넌트 끼얹기][post series 2]
+* ***애저 정적 웹 앱에 블레이저 웹 어셈블리 앱 호스팅하기***
+
 [지난 포스트][post prev]에서는 [Blazor 웹 어셈블리][blazor wasm] 앱을 로컬에서 개발해 봤다면, 이번 포스트에서는 이렇게 개발한 앱을 실제로 배포해 보는 작업을 진행해 보도록 한다. 이 포스트에서 배포에 사용할 앱은 [애저 정적 웹 앱][az swa]이다.
 
 > 이 포스트에 쓰인 샘플 코드는 이곳 [https://github.com/devkimchi/Blazor-React-Sample][gh sample]에서 다운로드 받을 수 있다.
@@ -166,6 +170,10 @@ https://gist.github.com/justinyoo/fcba3e387d240a057e76a28f233fec82?file=12-actio
 [gh sample blazor]: https://github.com/devkimchi/Blazor-React-Sample/tree/master/BlazorNpmSample
 [gh sample api]: https://github.com/devkimchi/Blazor-React-Sample/tree/master/BlazorApiSample
 [gh sample proxy]: https://github.com/devkimchi/Blazor-React-Sample/tree/master/BlazorProxySample
+
+[post series 1]: /ko/2020/06/03/adding-react-components-to-blazor-webassembly-app/
+[post series 2]: /ko/2020/06/10/adding-react-components-to-blazor-webassembly-app-by-nodejs/
+[post series 3]: /ko/2020/06/17/hosting-blazor-web-assembly-app-on-azure-static-webapp/
 
 [post prev]: /ko/2020/06/10/adding-react-components-to-blazor-webassembly-app-by-nodejs/
 
