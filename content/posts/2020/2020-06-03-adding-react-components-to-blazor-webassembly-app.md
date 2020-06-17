@@ -13,6 +13,10 @@ cover: https://sa0blogs.blob.core.windows.net/aliencube/2020/06/adding-react-com
 fullscreen: true
 ---
 
+* ***Blazor 웹 애플리케이션에 React UI 컴포넌트 끼얹기***
+* [Blazor 웹 애플리케이션에 node.js를 이용해 React UI 컴포넌트 끼얹기][post series 2]
+* [애저 정적 웹 앱에 블레이저 웹 어셈블리 앱 호스팅하기][post series 3]
+
 지난 [빌드 2020 행사][build]에서 엄청나게 많은 서비스와 기술들이 소개가 되었다. 이 중에서 프론트엔드 애플리케이션 개발에 한 획을 그을만한 내용이 하나 있었는데, 바로 [Blazor 웹 어셈블리][blazor wasm]에 대한 것이다. [웹 어셈블리][wasm]는 쉽게 말해서 웹 브라우저에서 자바스크립트 언어가 아닌 일반 프로그래밍 언어로 만들어진 바이너리를 작동시키는 기술이라고 이해하면 좋다. [Blazor][blazor]는 바로 이 웹 어셈블리를 이용해 닷넷 라이브러리를 웹브라우저에서 직접 실행시킬 수 있게 한다. [Blazor][blazor wasm]에 대한 소개는 [빌드 발표 동영상][build blazor]을 참조하도록 한다.
 
 다른 프론트엔드 프레임워크와 마찬가지로 [Blazor 웹 어셈블리][blazor wasm] 역시 자체 완결성을 갖고 있어서 다른 프론트엔드 프레임워크와 섞어 쓰기에는 까다로울 수 있다. 그럼에도 불구하고 기존의 컴포넌트 기반 프론트엔드 프레임워크라면 가능하기도 한데, 이 포스트에서는 [React][reactjs]를 기반으로 하는 [Fluent UI][fluentui] 컴포넌트를 [Blazor 웹 어셈블리][blazor wasm] 웹 앱에 추가하는 방법에 대해 알아보기로 한다.
@@ -71,6 +75,10 @@ https://gist.github.com/justinyoo/e6a99fffa35d032f70e937c7ccf14ddb?file=04-updat
 [image-01]: https://sa0blogs.blob.core.windows.net/aliencube/2020/06/adding-react-components-to-blazor-webassembly-app-01.png
 [image-02]: https://sa0blogs.blob.core.windows.net/aliencube/2020/06/adding-react-components-to-blazor-webassembly-app-02.png
 [image-03]: https://sa0blogs.blob.core.windows.net/aliencube/2020/06/adding-react-components-to-blazor-webassembly-app-03.png
+
+[post series 1]: /ko/2020/06/03/adding-react-components-to-blazor-webassembly-app/
+[post series 2]: /ko/2020/06/10/adding-react-components-to-blazor-webassembly-app-by-nodejs/
+[post series 3]: /ko/2020/06/17/hosting-blazor-web-assembly-app-on-azure-static-webapp/
 
 [post next]: /ko/2020/06/10/adding-react-components-to-blazor-webassembly-app-by-nodejs/
 

@@ -13,6 +13,10 @@ cover: https://sa0blogs.blob.core.windows.net/aliencube/2020/06/adding-react-com
 fullscreen: true
 ---
 
+* [Blazor 웹 애플리케이션에 React UI 컴포넌트 끼얹기][post series 1]
+* ***Blazor 웹 애플리케이션에 node.js를 이용해 React UI 컴포넌트 끼얹기***
+* [애저 정적 웹 앱에 블레이저 웹 어셈블리 앱 호스팅하기][post series 3]
+
 [지난 포스트][post prev]에서는 [Blazor 웹 어셈블리][blazor wasm] 앱에 자바스크립트 CDN을 활용해서 [React][reactjs] 기반의 [Fluent UI][fluentui] 컴포넌트를 추가해 봤다. 이런 식으로도 자바스크립트를 많이 활용을 하지만, 요즘 웹 프론트엔드 개발은 주로 [node.js][nodejs]와 [npm 패키지][npmjs]를 활용해서 하는 편이다. 이 포스트에서는 지난 포스트의 개발 경험을 node.js와 npm 패키지로 바꿔보기로 한다.
 
 > 이 포스트에 쓰인 샘플 코드는 이곳[https://github.com/devkimchi/Blazor-React-Sample][gh sample]에서 다운로드 받을 수 있다.
@@ -93,7 +97,7 @@ https://gist.github.com/justinyoo/224fa5fe1bfa2dca8dcdd0fc83c17251?file=11-app.c
 
 ---
 
-이렇게 해서 [Blazor 웹 어셈블리][blazor wasm] 애플리케이션에 [React][reactjs] 기반의 컴포넌트를 npm 패키지를 이용해 추가하는 방법에 대해 알아보았다. 다음 포스트에서는 이렇게 만들어진 [Blazor 웹 어셈블리][blazor wasm] 애플리케이션을 [애저 정적 웹 앱][az swa]에 배포하는 방법에 대해 알아보기로 하자.
+이렇게 해서 [Blazor 웹 어셈블리][blazor wasm] 애플리케이션에 [React][reactjs] 기반의 컴포넌트를 npm 패키지를 이용해 추가하는 방법에 대해 알아보았다. [다음 포스트][post next]에서는 이렇게 만들어진 [Blazor 웹 어셈블리][blazor wasm] 애플리케이션을 [애저 정적 웹 앱][az swa]에 배포하는 방법에 대해 알아보기로 하자.
 
 
 [image-01]: https://sa0blogs.blob.core.windows.net/aliencube/2020/06/adding-react-components-to-blazor-webassembly-app-by-nodejs-01.png
@@ -102,7 +106,12 @@ https://gist.github.com/justinyoo/224fa5fe1bfa2dca8dcdd0fc83c17251?file=11-app.c
 
 [gh sample]: https://github.com/devkimchi/Blazor-React-Sample
 
+[post series 1]: /ko/2020/06/03/adding-react-components-to-blazor-webassembly-app/
+[post series 2]: /ko/2020/06/10/adding-react-components-to-blazor-webassembly-app-by-nodejs/
+[post series 3]: /ko/2020/06/17/hosting-blazor-web-assembly-app-on-azure-static-webapp/
+
 [post prev]: /ko/2020/06/03/adding-react-components-to-blazor-webassembly-app/
+[post next]: /ko/2020/06/17/hosting-blazor-web-assembly-app-on-azure-static-webapp/
 
 [kedren]: https://www.linkedin.com/in/kedrenvillena/
 [kedren post]: https://medium.com/swlh/using-npm-packages-with-blazor-2b0310279320
