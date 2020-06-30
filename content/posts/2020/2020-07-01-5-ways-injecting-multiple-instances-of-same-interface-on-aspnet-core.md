@@ -74,7 +74,7 @@ https://gist.github.com/justinyoo/e5b18f907f6a1b22614c4e487cfe185f?file=10-feed-
 
 https://gist.github.com/justinyoo/e5b18f907f6a1b22614c4e487cfe185f?file=11-configure-services.cs&highlights=9-10
 
-실제 이를 활용하려는 `FeedReaderService` 클라스는 아래와 같이 수정한다 (line #5). `FeedReaderDelegate`가 반환하는 객체는 `IFeedReader` 인스턴스이므로, 실제 원하는 결과를 얻기 위해서는 메소드 체이닝을 통해 한번 더 메소드를 호출해야 한다 (line #12).
+실제 이를 활용하려는 `BlogFeedService` 클라스는 아래와 같이 수정한다 (line #5). `FeedReaderDelegate`가 반환하는 객체는 `IFeedReader` 인스턴스이므로, 실제 원하는 결과를 얻기 위해서는 메소드 체이닝을 통해 한번 더 메소드를 호출해야 한다 (line #12).
 
 https://gist.github.com/justinyoo/e5b18f907f6a1b22614c4e487cfe185f?file=12-feed-service.cs&highlights=5,12
 
@@ -85,7 +85,7 @@ https://gist.github.com/justinyoo/e5b18f907f6a1b22614c4e487cfe185f?file=12-feed-
 
 https://gist.github.com/justinyoo/e5b18f907f6a1b22614c4e487cfe185f?file=13-configure-services.cs&highlights=7-13
 
-이렇게 한 후 실제 `FeedReaderService` 역시도 람다 펑션을 의존성으로 주입해 줘야 한다 (line #5). 위의 경우와 모양은 거의 비슷하지만 대리자 대신 람다 펑션을 의존성 객체로 주입한다는 점이 다르다.
+이렇게 한 후 실제 `BlogFeedService` 역시도 람다 펑션을 의존성으로 주입해 줘야 한다 (line #5). 위의 경우와 모양은 거의 비슷하지만 대리자 대신 람다 펑션을 의존성 객체로 주입한다는 점이 다르다.
 
 https://gist.github.com/justinyoo/e5b18f907f6a1b22614c4e487cfe185f?file=14-feed-service.cs&highlights=5
 
