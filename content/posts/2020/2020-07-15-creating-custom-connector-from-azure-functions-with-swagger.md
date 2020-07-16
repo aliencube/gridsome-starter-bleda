@@ -27,29 +27,16 @@ https://gist.github.com/justinyoo/2b4bc731ff8f2cdb5e80e28bd7dff9e7?file=01-feed-
 ![][image-01]
 
 
+## NuGet 패키지 설치 ##
+
+애저 펑션에 Open API 문서를 손쉽게 생성해 주는 NuGet 패키지를 설치한다.
+
+https://gist.github.com/justinyoo/2b4bc731ff8f2cdb5e80e28bd7dff9e7?file=02-install-nuget-package.sh
+
+
 ## 보일러플레이트 코드 설치 ##
 
-이제 Open API 문서를 통합할 차례이다. [예전 포스트][post prev]라면 직접 보일러플레이트 코드를 작성해야 했지만, 이제는 굳이 그럴 필요가 없다. 아래와 같이 보일러플레이트 코드를 자동으로 설치해주는 스크립트를 다운로드 받아 실행시키면 된다. 다운로드 받는 경로는 프로젝트 루트의 `scripts`라는 디렉토리이다. 아래 코드는 파워셸 스크립트이다.
-
-https://gist.github.com/justinyoo/2b4bc731ff8f2cdb5e80e28bd7dff9e7?file=02-download-installer.ps1
-
-또한 아래 코드는 배시 스크립트이다. 배시 스크립트는 다운로드 받은 후에 실행 권한도 다시 설정해 주어야 한다 (line #5).
-
-https://gist.github.com/justinyoo/2b4bc731ff8f2cdb5e80e28bd7dff9e7?file=04-set-permission.sh&highlights=5
-
-설치 스크립트를 다운로드 받았으니, 이 스크립트를 실행시켜 보일러플레이트 코드를 설치한다. 아래는 파워셸 스트립트이다.
-
-https://gist.github.com/justinyoo/2b4bc731ff8f2cdb5e80e28bd7dff9e7?file=05-install-boilerplate.ps1
-
-만약 애저 펑션 v1 앱을 위해서라면 아래와 같이 파워셸 스크립트에 `-IsVersion` 스위치를 하나 더 붙여준다.
-
-https://gist.github.com/justinyoo/2b4bc731ff8f2cdb5e80e28bd7dff9e7?file=06-install-boilerplate-v1.ps1
-
-아래는 Bash 스크립트를 실행시키기 위한 명령어이다.
-
-https://gist.github.com/justinyoo/2b4bc731ff8f2cdb5e80e28bd7dff9e7?file=07-install-boilerplate.sh
-
-이렇게 해서 보일러플레이트 코드를 인스톨했다. 그러면 다시 앱을 실행시켜보자. 아래 그림과 같이 추가 엔드포인트가 보일 것이다. 이 세 엔드포인트가 바로 Open API 관련한 것들이다.
+사실, 위 NuGet 패키지를 설치하면 이 보일러플레이트 코드가 자동으로 설치가 된다. 따라서, 이 부분은 딱히 고민할 부분이 없다. 앱을 빌드하고 실행시켜보자. 아래 그림과 같이 추가 엔드포인트가 보일 것이다. 이 세 엔드포인트가 바로 Open API 관련한 것들이다.
 
 ![][image-02]
 
