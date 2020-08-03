@@ -24,6 +24,8 @@ fullscreen: true
 
 개발 환경은 도커 컨테이너 안에 정의할 수 있으므로 먼저 `Dockerfile`을 정의하면 좋다. 이미 [훌륭하게 정의된 환경][gh vs cs config]이 있기 때문에 이를 직접 사용해도 된다. 하지만, 여기서는 직접 만들어 보기로 하자. 우선 필요한 환경과 익스텐션들을 결정한다.
 
+> 이 포스트에서 사용한 샘플 환경 설정은 [이 리포지토리][gh sample]에서 확인할 수 있다.
+
 
 ### `.devcontainer` 디렉토리 생성 ###
 
@@ -145,6 +147,7 @@ https://gist.github.com/justinyoo/491cd606bd3b646f3fd5773d104e46f5?file=04-dotne
 
 [gh cs]: https://github.com/features/codespaces/
 [gh ohmyzsh]: https://github.com/ohmyzsh/ohmyzsh
+[gh sample]: https://github.com/devkimchi/codespaces-dotnetcore
 [gh vs cs config]: https://github.com/microsoft/vscode-dev-containers/tree/master/containers/dotnetcore
 
 [dotnet core]: https://docs.microsoft.com/ko-kr/dotnet/?WT.mc_id=aliencubeorg-blog-juyoo
