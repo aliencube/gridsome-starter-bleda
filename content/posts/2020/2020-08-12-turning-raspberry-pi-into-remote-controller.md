@@ -55,7 +55,7 @@ https://gist.github.com/justinyoo/34e3470ced2641221c69ebeab6e034f7?file=01-insta
 
 https://gist.github.com/justinyoo/34e3470ced2641221c69ebeab6e034f7?file=02-modify-boot-config.sh
 
-아래 부분을 찾아 주석을 해제하고 pin 번호를 수정한다. pin 번호 기본 값은 `gpio-kr` 값이 17번, `gpio-ir-tx` 값이 18번이지만, 이를 반대로 바꿔줘야 한다 (line #5-6).
+아래 부분을 찾아 주석을 해제하고 pin 번호를 수정한다. pin 번호 기본 값은 `gpio-ir` 값이 17번, `gpio-ir-tx` 값이 18번이지만, 이를 반대로 바꿔줘야 한다 (line #5-6).
 
 > 물론 안 바꿔도 작동할 수 있다. 하지만, 내 경우에는 꼭 바꿔 줘야만 작동을 했다.
 
