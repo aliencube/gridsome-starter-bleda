@@ -15,8 +15,8 @@ fullscreen: true
 
 얼마 전에 [치즈님(@seojeeee)][twt seojeee]님과 함께 이 주제를 갖고 라이브 코딩 방송을 진행한 적이 있었다 &ndash; [1부][yt lc part1] [2부][yt lc part2]. 이 때 왠지 나도 집에 있는 에어콘을 활용해 보면 좋겠다는 생각이 들어서 같은 장비를 활용해서 실제로 리모트 콘트롤러를 만들어 보았다. 이 포스트는 이 리모트 콘트롤러를 만들면서 알아두면 좋을 것들에 대한 메모의 성격이다.
 
-* *라즈베리 파이를 리모트 콘트롤러로 활용하기*
-* 파워앱을 이용해 라즈베리 파이 리모트 콘트롤러를 외부에서 실행시키기
+* ***라즈베리 파이를 리모트 콘트롤러로 활용하기***
+* [파워 플랫폼으로 라즈베리 파이 리모트 콘트롤러를 외부에서 실행시키기][post next]
 
 > 이 포스트에 사용된 샘플 코드는 이곳 [깃헙 리포지토리][gh sample]에서 확인할 수 있다.
 
@@ -221,7 +221,7 @@ https://youtu.be/QoUmSVAxBCs
 
 ---
 
-지금까지 [라즈베리 파이][rpi]를 리모트 콘트롤러로 활용해서 집의 전자제품들을 켰다 껐다 하는 방법을 알아 보았다. 다음 포스트에서는 그렇다면 실제로 이 기능을 이용해서 외부에서도 [애저 펑션][az func]과 [파워 오토메이트][pw automate], [파워 앱][pw apps]을 통해 집 안의 전자제품들을 켰다 껐다 할 수 있는 방법에 대해 알아보기로 한다.
+지금까지 [라즈베리 파이][rpi]를 리모트 콘트롤러로 활용해서 집의 전자제품들을 켰다 껐다 하는 방법을 알아 보았다. [다음 포스트][post next]에서는 그렇다면 실제로 이 기능을 이용해서 외부에서도 [애저 펑션][az func]과 [파워 오토메이트][pw automate], [파워 앱][pw apps]을 통해 집 안의 전자제품들을 켰다 껐다 할 수 있는 방법에 대해 알아보기로 한다.
 
 
 [image-01]: https://sa0blogs.blob.core.windows.net/aliencube/2020/08/turning-raspberry-pi-into-remote-controller-01.png
@@ -235,6 +235,8 @@ https://youtu.be/QoUmSVAxBCs
 [image-09]: https://sa0blogs.blob.core.windows.net/aliencube/2020/08/turning-raspberry-pi-into-remote-controller-09.png
 [image-10]: https://sa0blogs.blob.core.windows.net/aliencube/2020/08/turning-raspberry-pi-into-remote-controller-10.png
 [image-11]: https://sa0blogs.blob.core.windows.net/aliencube/2020/08/turning-raspberry-pi-into-remote-controller-11.png
+
+[post next]: /ko/2020/08/19/remote-controlling-home-appliances-using-raspberry-pi-and-power-platform/
 
 [twt seojeee]: https://twitter.com/seojeee
 
