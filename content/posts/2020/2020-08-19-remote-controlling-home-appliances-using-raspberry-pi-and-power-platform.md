@@ -1,7 +1,7 @@
 ---
 title: "파워 플랫폼으로 라즈베리 파이 리모트 콘트롤러를 외부에서 실행시키기"
 slug: remote-controlling-home-appliances-using-raspberry-pi-and-power-platform
-description: "이 포스트에서는 라즈베리 파이를 리모트 콘트롤러로 활용하는 방법에 대해 알아봅니다."
+description: "이 포스트에서는 라즈베리 파이로 만든 리모트 콘트롤러를 파워 플랫폼을 이용해 원격으로 제어하는 방법에 대해 알아봅니다."
 date: "2020-08-19"
 author: Justin-Yoo
 tags:
