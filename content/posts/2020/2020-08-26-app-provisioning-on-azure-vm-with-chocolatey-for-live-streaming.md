@@ -43,7 +43,7 @@ https://gist.github.com/justinyoo/acdfc3c854f21f4e10f56e3d9d75e4c7?file=01-insta
 
 ## 애저 윈도우즈 VM 프로비저닝 ##
 
-이제 애저에 윈도우용 VM 인스턴스를 생성해 보자. 이것도 애저 포탈에서 수동으로 설치하는 대신, ARM 템플릿을 이용해서 한번에 해결할 수 있다. ARM 템플릿 작성은 이 [퀵 스타트 템플릿][az quickstart]을 이용하면 쉽게 만들 수 있다. 이 템플릿을 바탕으로 라이브 스트리밍에 필요한 VM 사양으로 내용을 바꾸면 된다. 여기서는 [Deploy a simple Windows VM][az quickstart vm]을 기준으로 목적에 맞게 수정한 결과는 대략 아래와 같다. 편의상 불필요한 부분은 생략했다. 다만, VM 사양에 대해서는 설명할 필요가 있을 듯 해서 [VM 사이즈][az vm size] (line #43), [VM 이미지][az vm image] (line #48-51) 정보는 남겨뒀다.
+이제 애저에 윈도우용 VM 인스턴스를 생성해 보자. 이것도 애저 포탈에서 수동으로 설치하는 대신, [ARM 템플릿][az arm]을 이용해서 한번에 해결할 수 있다. ARM 템플릿 작성은 이 [퀵 스타트 템플릿][az quickstart]을 이용하면 쉽게 만들 수 있다. 이 템플릿을 바탕으로 라이브 스트리밍에 필요한 VM 사양으로 내용을 바꾸면 된다. 여기서는 [Deploy a simple Windows VM][az quickstart vm]을 기준으로 목적에 맞게 수정한 결과는 대략 아래와 같다. 편의상 불필요한 부분은 생략했다. 다만, VM 사양에 대해서는 설명할 필요가 있을 듯 해서 [VM 사이즈][az vm size] (line #43), [VM 이미지][az vm image] (line #48-51) 정보는 남겨뒀다.
 
 https://gist.github.com/justinyoo/acdfc3c854f21f4e10f56e3d9d75e4c7?file=02-azure-vm.json&highlights=43,48-51
 
@@ -77,7 +77,7 @@ https://gist.github.com/justinyoo/acdfc3c854f21f4e10f56e3d9d75e4c7?file=05-arm-d
 
 [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fdevkimchi%2FLiveStream-VM-Setup-Sample%2Fmain%2Fazuredeploy.json)
 
-이렇게 해서 VM 인스턴스 프로비저닝이 끝난 후 직접 접속해 보면 아래와 같이 지정된 애플리케이션이 자동으로 설치가 된 것을 확인할 수 있다.
+이렇게 해서 VM 인스턴스 프로비저닝이 끝난 후 [RDP][az vm rdp] 또는 [바스티온][az vm bastion]을 이용해 직접 접속해 보면 아래와 같이 지정된 애플리케이션이 자동으로 설치가 된 것을 확인할 수 있다.
 
 ![][image-01]
 
@@ -104,6 +104,7 @@ https://gist.github.com/justinyoo/acdfc3c854f21f4e10f56e3d9d75e4c7?file=05-arm-d
 [obs ndi]: https://obsproject.com/forum/threads/obs-ndi-newtek-ndi%E2%84%A2-integration-into-obs-studio.69240/
 [ndi]: https://www.ndi.tv/
 
+[az arm]: https://docs.microsoft.com/ko-kr/azure/azure-resource-manager/templates/overview?WT.mc_id=aliencubeorg-blog-juyoo
 [az quickstart]: https://azure.microsoft.com/ko-kr/resources/templates/?term=Deploy+a+simple+Windows+VM&WT.mc_id=aliencubeorg-blog-juyoo
 [az quickstart vm]: https://azure.microsoft.com/ko-kr/resources/templates/101-vm-simple-windows/?WT.mc_id=aliencubeorg-blog-juyoo
 
@@ -111,5 +112,7 @@ https://gist.github.com/justinyoo/acdfc3c854f21f4e10f56e3d9d75e4c7?file=05-arm-d
 [az vm size]: https://docs.microsoft.com/ko-kr/azure/virtual-machines/sizes?WT.mc_id=aliencubeorg-blog-juyoo
 [az vm image]: https://docs.microsoft.com/ko-kr/azure/virtual-machines/windows/cli-ps-findimage?WT.mc_id=aliencubeorg-blog-juyoo
 [az vm custom script]: https://docs.microsoft.com/ko-kr/azure/virtual-machines/extensions/custom-script-windows?WT.mc_id=aliencubeorg-blog-juyoo
+[az vm rdp]: https://docs.microsoft.com/ko-kr/azure/virtual-machines/windows/connect-logon?WT.mc_id=aliencubeorg-blog-juyoo
+[az vm bastion]: https://docs.microsoft.com/ko-kr/azure/bastion/bastion-connect-vm-rdp?WT.mc_id=aliencubeorg-blog-juyoo
 
 [az storage blob]: https://docs.microsoft.com/ko-kr/azure/storage/blobs/storage-blobs-overview?WT.mc_id=aliencubeorg-blog-juyoo
