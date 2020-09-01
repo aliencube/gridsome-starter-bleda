@@ -13,6 +13,11 @@ cover: https://sa0blogs.blob.core.windows.net/aliencube/2020/08/app-provisioning
 fullscreen: true
 ---
 
+이 블로그 포스트 시리즈를 통해 [애저 VM][az vm] 인스턴스를 프로비저닝 할 때 자동으로 필요한 애플리케이션을 설치하는 방법과 더불어 이런 애저 리소스 프로비저닝을 [파워 플랫폼][pw platform]이 훌륭하게 수행할 수 있는 방법에 대해 알아 보고자 한다.
+
+* ***초콜라티로 애저 VM 위에 라이브 스트리밍을 위한 애플리케이션 자동 설치하기***
+* [파워 플랫폼으로 일회성 애저 리소스 프로비저닝하기][post next]
+
 오프라인 밋업이나 컨퍼런스가 모두 사라진 요즘에는 이를 대신하기 위한 온라인 밋업과 컨퍼런스가 하루가 멀다하고 진행이 된다. 일반적으로 커뮤니티에서 주관하는 이벤트의 경우에는 유료로 방송 플랫폼을 구입하거나 자체적으로 솔루션을 만들어서 쓰곤 한다. 자체적으로 솔루션을 만들어서 쓴다고 하면 혼자 북치고 장구치고 다 하는 개인 방송의 경우에는 자기 컴퓨터에 모든 것을 설치해 놓고 쓰면 된다고 하지만, 만약 여러 사람이 동시다발적으로 접속해서 실시간으로 패널 토의를 한다든가 한다면 컴퓨터 사양이 어지간히 좋지 않는 이상 이를 감당하기 어려울 수 있다.
 
 이럴 때 사용하면 좋은 대안이 몇 가지 있는데, 그 중 하나가 바로 클라우드에 올라간 가상머신(VM)을 이용하는 것이다. 가상머신은 언제든 필요할 때 마다 프로비저닝해서 인스턴스를 만들어 사용할 수 있고, 그렇게 사용한 인스턴스는 필요 없을 경우 곧바로 삭제하면 된다. 그런데, 이 방법 역시도 "라이브 스트리밍"이라는 관점에서 보면 단점이 한가지 있는데, VM 인스턴스를 생성할 때 마다 직접 라이브 스트리밍에 필요한 애플리케이션을 설치해야 한다. 어쩌다 한 번씩 VM 인스턴스를 만드는 거라면 크게 상관은 없겠지만, 이것도 꽤 손이 많이 가는 일이긴 하다. 따라서, 이 포스트를 통해 애저에 [윈도우용 VM][az vm]을 설치하고 동시에 [초콜라티 Chocolatey][chocolatey]라는 애플리케이션 설치 도구를 이용해서 라이브 스트리밍에 필요한 애플리케이션을 자동으로 설치하는 방법에 대해 알아보기로 한다.
@@ -85,8 +90,12 @@ https://gist.github.com/justinyoo/acdfc3c854f21f4e10f56e3d9d75e4c7?file=05-arm-d
 
 지금까지 [애저 VM][az vm]에 [초콜라티][chocolatey]를 이용해서 프로비저닝과 동시에 자동으로 라이브 스트리밍에 필요한 애플리케이션을 설치하는 방법에 대해 알아 보았다. 여러 가지 이유로 가상머신은 수시로 만들었다 지웠다 할텐데, 이 때 이 포스트에 언급한 ARM 템플릿을 이용하면 굉장히 손쉽게 한번에 VM 뿐만 아니라 애플리케이션 설치까지 할 수 있다. 앞으로 라이브 스트리밍을 고려하는 사람들에게 유용한 팁이 되길 희망한다.
 
+[다음 포스트][post next]에서는 이런 애저 리소스 프로비저닝을 [파워 플랫폼][pw platform]을 통해 단순화시켜 볼 수 있는 방법에 대해 알아보기로한다.
+
 
 [image-01]: https://sa0blogs.blob.core.windows.net/aliencube/2020/08/app-provisioning-on-azure-vm-with-chocolatey-for-live-streaming-01.png
+
+[post next]: /ko/2020/09/02/ad-hoc-azure-resource-provisioning-via-power-platform/
 
 [gh sample]: https://github.com/devkimchi/LiveStream-VM-Setup-Sample
 [gh sample arm]: https://github.com/devkimchi/LiveStream-VM-Setup-Sample/blob/main/azuredeploy.json#L347-L389
@@ -116,3 +125,5 @@ https://gist.github.com/justinyoo/acdfc3c854f21f4e10f56e3d9d75e4c7?file=05-arm-d
 [az vm bastion]: https://docs.microsoft.com/ko-kr/azure/bastion/bastion-connect-vm-rdp?WT.mc_id=aliencubeorg-blog-juyoo
 
 [az storage blob]: https://docs.microsoft.com/ko-kr/azure/storage/blobs/storage-blobs-overview?WT.mc_id=aliencubeorg-blog-juyoo
+
+[pw platform]: https://powerplatform.microsoft.com/ko-kr/?WT.mc_id=aliencubeorg-blog-juyoo
