@@ -15,7 +15,7 @@ fullscreen: true
 
 애저에 리소스를 프로비저닝하기 위해서는 몇 가지 방법이 있다. 그 중 하나가 바로 [ARM 템플릿][az arm template]을 사용하는 것이다. 그런데, 이 ARM 템플릿은 약간의 러닝 커브가 있고, 템플릿의 구조 자체가 복잡해서 최초 작성시에 시간이 오래 걸리는 편이다. 이를 위해 다양한 베스트 프랙티스가 생겼지만, 여전히 최초 작성시 시간이 많이 걸리는 것은 사실이다.
 
-이 문제를 해결하기 위해 마이크로소프트에서는 이 ARM 템플릿을 쉽게 작성하기 위한 DSL을 공개했다. 이 DSL의 이름은 `Bicep`인데, 이 글을 쓰는 시점에서는 현재 0.1 버전으로 극초기 프리뷰 단계이다. 이 포스트에서는 이 Bicep을 이용해서 ARM 템플릿을 빌드해 보고, 기존의 ARM 템플릿에 비해 어떤 장점이 있는지 알아보기로 한다.
+이 문제를 해결하기 위해 마이크로소프트에서는 이 ARM 템플릿을 쉽게 작성하기 위한 DSL을 공개했다. 이 DSL의 이름은 [`Bicep`][gh bicep]인데, 이 글을 쓰는 시점에서는 현재 0.1 버전으로 극초기 프리뷰 단계이다. 이 포스트에서는 이 Bicep을 이용해서 ARM 템플릿을 빌드해 보고, 기존의 ARM 템플릿에 비해 어떤 장점이 있는지 알아보기로 한다.
 
 > 이 포스트에 쓰인 Bicep 파일은 이곳 [GitHub 리포지토리][gh sample]에서 다운로드 받을 수 있다.
 
@@ -86,10 +86,11 @@ bicep build ./azuredeploy.bicep
 
 ---
 
-지금까지 ARM 템플릿의 DSL인 Bicep의 초기 프리뷰 버전에 대해 살펴보았다. Bicep을 다뤄본 첫 인상은 꽤 사용하기 쉬워졌고, 템플릿 작성 경험이 좋아지겠다는 사실이다. 이를 통해 이 글을 읽는 여러분들 역시 애저 ARM 템플릿의 개발 경험이 좀 더 나아지길 바란다.
+지금까지 ARM 템플릿의 DSL인 [Bicep][gh bicep]의 초기 프리뷰 버전에 대해 살펴보았다. Bicep을 다뤄본 첫 인상은 꽤 사용하기 쉬워졌고, 템플릿 작성 경험이 좋아지겠다는 사실이다. 이를 통해 이 글을 읽는 여러분들 역시 애저 ARM 템플릿의 개발 경험이 좀 더 나아지길 바란다.
 
 
 [gh sample]: https://github.com/devkimchi/LiveStream-VM-Setup-Sample/blob/main/bicep/azuredeploy.bicep
+[gh bicep]: https://github.com/Azure/bicep
 
 [az arm template]: https://docs.microsoft.com/ko-kr/azure/azure-resource-manager/templates/overview?WT.mc_id=aliencubeorg-blog-juyoo
 [az arm template manual]: https://github.com/devkimchi/LiveStream-VM-Setup-Sample/blob/main/azuredeploy.json
