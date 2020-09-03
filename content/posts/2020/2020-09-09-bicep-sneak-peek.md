@@ -60,12 +60,17 @@ https://gist.github.com/justinyoo/f3605100c5bfe7f7c7bd32f2d5fd1eb2?file=05-varia
 
 ## Bicep 리소스 Resources ##
 
-실제 애저 리소스를 정의하는 부분의 영역은 아래와 같다. 몇 가지 눈에 띄는 점이 있다.
-
-* 리소스 타입과 네임스페이스, 그리고 API 버전을 `네임스페이스/타입@버전`의 형태로 선언한다 (line #1). 개인적으로 API 버전을 선언할 때 [`providers()` 함수][az arm function providers]를 사용하는 것을 선호하지만, [권장하지 않는 방법이라고 한다][az arm validation providers]. 아래의 예제처럼 명시적으로 버전을 지정하는 것을 권장한다.
-* ARM 템플릿에서 각 리소스별 의존성을 정의하기 위해서는 `dependsOn` 속성을 직접 지정해 줘야 하지만, Bicep 에서는 리소스 레퍼런스만 지정하면 알아서 자동으로 의존성을 해소한다. 예를 들어, 애저 저장소 계정을 선언하고 이후 가상 머신을 선언할 때 저장소 계정 리소스에 대한 레퍼런스를 적어주는 식이다 (line #19).
+실제 애저 리소스를 정의하는 부분의 영역은 아래와 같다.
 
 https://gist.github.com/justinyoo/f3605100c5bfe7f7c7bd32f2d5fd1eb2?file=06-resource.bicep&highlights=1,19
+
+몇 가지 눈에 띄는 점이 있다.
+
+* 리소스 타입과 네임스페이스, 그리고 API 버전을 `네임스페이스/타입@버전`의 형태로 선언한다 (line #1). 개인적으로 API 버전을 선언할 때 [`providers()` 함수][az arm function providers]를 사용하는 것을 선호하지만, [권장하지 않는 방법이라고 한다][az arm validation providers]. 아래의 예제처럼 명시적으로 버전을 지정하는 것을 권장한다. 만약 리소스별 API 버전을 확인하고 싶다면 아래와 같이 파워셸 명령어를 쓰면 된다.
+
+https://gist.github.com/justinyoo/f3605100c5bfe7f7c7bd32f2d5fd1eb2?file=07-get-provider.ps1
+
+* ARM 템플릿에서 각 리소스별 의존성을 정의하기 위해서는 `dependsOn` 속성을 직접 지정해 줘야 하지만, Bicep 에서는 리소스 레퍼런스만 지정하면 알아서 자동으로 의존성을 해소한다. 예를 들어, 애저 저장소 계정을 선언하고 이후 가상 머신을 선언할 때 저장소 계정 리소스에 대한 레퍼런스를 적어주는 식이다 (line #19).
 
 여기서 한 가지 재미있는 사실을 발견할 수 있다. ARM 템플릿은 `parameters` 섹션, `variables` 섹션, `resources` 섹션 등이 구분되어 있어 그 안에서만 파라미터, 변수, 리소스를 정의해야 하지만, Bicep 에서는 그 부분이 굉장히 자유롭다. 따라서, 파일 안의 어디에서든 `param`, `var`, `resource`를 선언하고 자유롭게 레퍼런스를 사용하면 된다. 그러면 컴파일을 하면서 자동으로 ARM 템플릿에 반영이 된다.
 
@@ -74,9 +79,7 @@ https://gist.github.com/justinyoo/f3605100c5bfe7f7c7bd32f2d5fd1eb2?file=06-resou
 
 앞서 언급했다시피 이 글을 쓰는 현재 Bicep은 0.1 버전이라서 아직 많은 부분이 개선되어야 한다. 따라서, 설치 방법이 조금 까다롭긴 하지만, [링크][az bicep install]의 설치 문서를 따라하면 어렵지 않게 설치할 수 있다. 설치가 끝난 후에는 아래 명령어를 통해 앞서 작성한 Bicep 파일을 컴파일 하면 된다.
 
-```bash
-bicep build ./azuredeploy.bicep
-```
+https://gist.github.com/justinyoo/f3605100c5bfe7f7c7bd32f2d5fd1eb2?file=08-build-bicep.sh
 
 
 ## ARM 템플릿 파일 비교 ##
