@@ -81,6 +81,16 @@ https://gist.github.com/justinyoo/491cd606bd3b646f3fd5773d104e46f5?file=02-setup
 
 https://gist.github.com/justinyoo/491cd606bd3b646f3fd5773d104e46f5?file=03-devcontainer.json
 
+
+### `devcontainer.json`의 다른 기능 ###
+
+방금 익스텐션들을 `devcontainer.json` 파일 안에 정의했다. 그렇다면 이 파일은 그 이외에 어떤 다른 기능이 있을까? 이 `devcontainer.json` 파일은 [VS CS][vs cs]를 사용하는데 필요한 전반적인 환경을 설정하는 것이다. 대부분 기본값으로 놓고 사용해도 무리는 없지만, 그래도 세부적으로 조정을 해보고 싶다면 [이 문서][vs cs config]를 참조하기로 하고, 여기서는 필수적으로 고려해 볼만한 몇 가지만 다뤄본다.
+
+* `dockerFile`: 앞서 정의한 `Dockerfile` 값을 여기에 지정한다.
+* `forwardPorts`: [VS CS]에서 개발하는 애플리케이션이 특정 포트를 사용할 때, 이를 포워딩 시켜 외부로 공개한다. 예를 들어, ASP.NET Core 애플리케이션을 개발하다 보면 `5000`, `5001`번 포트를 기본값으로 사용하게 되는데, 이 값들을 여기에 배열로 넣어주면 된다. 마찬가지로 애저 펑션의 경우에는 기본적으로 `7071`번 포트를 사용하므로 함께 넣어주면 좋다.
+* `settings`: [VS CS][vs cs]의 에디터 환경 설정을 위한 속성이다.
+
+
 이렇게 모든 환경 설정이 끝났다.
 
 ## 깃헙 Codespaces 실행 ##
