@@ -13,6 +13,8 @@ cover: https://sa0blogs.blob.core.windows.net/aliencube/2020/08/setting-up-vs-co
 fullscreen: true
 ---
 
+> **업데이트**: 2020년 9월 4일 부터 [비주얼 스튜비오 Codespaces][vs cs]는 [깃헙 Codespaces][gh cs]로 통합된다. 기존 비주얼 스튜디오 Codespaces 사용자는 깃헙 Codespaces로 이전하라는 안내를 받게 되며, 2020년 11월 20일부터는 신규로 비주얼 스튜디오 Codespaces 인스턴스 생성을 할 수 없고, 2021년 2월 17일부터는 비주얼 스튜디오 Codespaces 서비스가 종료된다. 이 때 까지 이전하지 않은 인스턴스는 자동으로 삭제된다. 자세한 내용은 [공지 사항 블로그][vs cs consolidated]를 참조하기 바란다.
+
 지난 2020년 4월부터 [비주얼 스튜디오 Codespaces 서비스가 정식으로 론칭됐다][vs cs]. 그 이후로 [깃헙 Codespaces][gh cs] 역시도 현재 프라이빗 프리뷰 기능으로 제공되고 있는 중인데, 이 둘은 사용법이 거의 동일하다. 이 둘의 차이점은 [이 포스트][devto post]를 통해 확인해 보도록 하자. 다만 여기서는 [닷넷 코어][dotnet core] 애플리케이션 개발을 위해 필요한 환경 설정에 대해 논의하기로 한다.
 
 [비주얼 스튜디오 Codespaces (VS CS)][vs cs] 서비스는 온라인 기반 IDE로서 [애저 클라우드][az] 어딘가의 가상머신에서 돌아간다. 이 가상머신은 [VS CS][vs cs]를 시작할 때 자동으로 만들어지고 끝나면 자동으로 폐기되는 방식인데, 이 때 별다른 개발 환경 설정이 없다면 기본값으로 설정이 된다. 하지만, 이 기본값은 말 그대로 기본값이어서 예를 들어 닷넷 코어를 이용해 애플리케이션을 개발하려면 별도의 추가 환경 설정을 해 주어야 한다.
@@ -154,6 +156,7 @@ https://gist.github.com/justinyoo/491cd606bd3b646f3fd5773d104e46f5?file=04-dotne
 [vs cs config]: https://docs.microsoft.com/ko-kr/visualstudio/codespaces/reference/configuring?WT.mc_id=aliencubeorg-blog-juyoo
 [vs cs personal]: https://docs.microsoft.com/ko-kr/visualstudio/codespaces/reference/personalizing?WT.mc_id=aliencubeorg-blog-juyoo
 [vs cs vso]: https://online.visualstudio.com/?WT.mc_id=aliencubeorg-blog-juyoo
+[vs cs consolidated]: https://devblogs.microsoft.com/visualstudio/visual-studio-codespaces-is-consolidating-into-github-codespaces/?WT.mc_id=aliencubeorg-blog-juyoo
 
 [gh cs]: https://github.com/features/codespaces/
 [gh ohmyzsh]: https://github.com/ohmyzsh/ohmyzsh
