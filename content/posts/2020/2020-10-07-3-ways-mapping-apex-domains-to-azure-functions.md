@@ -92,7 +92,7 @@ https://gist.github.com/justinyoo/8f4f33645adf7426969855b29171e91a?file=04-add-h
 
 지금까지, 세 가지 방법을 이용해서 APEX 도메인을 [애저 펑션][az func] 인스턴스에 연결하는 방법에 대해 알아 보았다. 일반적인 사용자 케이스로만 보면 애저 펑션은 사용자 지정 도메인을 연결할 일이 없거나, 있어도 루트 도메인으로 연결할 일이 거의 없다고 판단했는지, 애저 포탈에서는 루트 도메인 등록 자체를 할 수 없게 막아두었다. 하지만, [애저 파워셸][az pwsh] 또는 [애저 CLI][az cli]를 사용한다거나 ARM 템플릿을 사용하는 방식을 이용하면 루트 도메인을 등록할 수 있다. 만약 여러분의 고객 중 하나가 동일한 요구사항이 있다면 이 포스트가 도움이 되기를 바란다.
 
- 다음 포스트에서는 이 사용자 지정 도메인에 [Let's Encrypt][letsencrypt]로 생성한 SSL 인증서를 연결하는 방법에 대해 알아보기로 하자.
+다음 포스트에서는 이 사용자 지정 도메인에 [Let's Encrypt][letsencrypt]로 생성한 SSL 인증서를 연결하는 방법에 대해 알아보기로 하자.
 
 
 [image-01]: https://sa0blogs.blob.core.windows.net/aliencube/2020/10/3-ways-mapping-apex-domains-to-azure-functions-01-ko.png
