@@ -16,7 +16,7 @@ fullscreen: true
 이 시리즈에서는 애저 펑션 인스턴스를 운영하면서 사용자 지정 도메인을 연결하고, SSL 인증서를 붙이고, 수시로 변하는 공개 IP 주소를 관리하는 방법에 대해 알아본다.
 
 * ***애저 펑션에 APEX 도메인을 연결하는 세 가지 방법***
-* 애저 펑션에 Let's Encrypt 인증서 자동으로 연동하기
+* [애저 펑션에 Let's Encrypt 인증서 자동으로 연동하기][post 2]
 * 애저 펑션에 할당된 공개 IP 주소를 DNS에 자동으로 업데이트하기
 * 애저 펑션 배포 프로필 없이 깃헙 액션으로 배포하기
 
@@ -82,7 +82,7 @@ https://gist.github.com/justinyoo/8f4f33645adf7426969855b29171e91a?file=02-az-fu
 
 위와 같은 커맨드라인 명령어 방식 보다 ARM 템플릿을 선호할 경우 이를 이용해서 등록할 수도 있다. 아래는 간단하게 [bicep 형식][gh bicep]으로 표현한 것이다 (line #5-8)
 
-https://gist.github.com/justinyoo/8f4f33645adf7426969855b29171e91a?file=03-add-hostname.bicep&highlights=5-8
+https://gist.github.com/justinyoo/8f4f33645adf7426969855b29171e91a?file=03-add-hostname.bicep&highlights=6-9
 
 이를 ARM 템플릿으로 컴파일한 결과는 아래와 같다.
 
@@ -92,7 +92,7 @@ https://gist.github.com/justinyoo/8f4f33645adf7426969855b29171e91a?file=04-add-h
 
 지금까지, 세 가지 방법을 이용해서 APEX 도메인을 [애저 펑션][az func] 인스턴스에 연결하는 방법에 대해 알아 보았다. 일반적인 사용자 케이스로만 보면 애저 펑션은 사용자 지정 도메인을 연결할 일이 없거나, 있어도 루트 도메인으로 연결할 일이 거의 없다고 판단했는지, 애저 포탈에서는 루트 도메인 등록 자체를 할 수 없게 막아두었다. 하지만, [애저 파워셸][az pwsh] 또는 [애저 CLI][az cli]를 사용한다거나 ARM 템플릿을 사용하는 방식을 이용하면 루트 도메인을 등록할 수 있다. 만약 여러분의 고객 중 하나가 동일한 요구사항이 있다면 이 포스트가 도움이 되기를 바란다.
 
-다음 포스트에서는 이 사용자 지정 도메인에 [Let's Encrypt][letsencrypt]로 생성한 SSL 인증서를 연결하는 방법에 대해 알아보기로 하자.
+[다음 포스트][post 2]에서는 이 사용자 지정 도메인에 [Let's Encrypt][letsencrypt]로 생성한 SSL 인증서를 연결하는 방법에 대해 알아보기로 하자.
 
 
 [image-01]: https://sa0blogs.blob.core.windows.net/aliencube/2020/10/3-ways-mapping-apex-domains-to-azure-functions-01-ko.png
