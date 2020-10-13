@@ -13,13 +13,14 @@ cover: https://sa0blogs.blob.core.windows.net/aliencube/2020/10/3-ways-mapping-a
 fullscreen: true
 ---
 
-이 시리즈에서는 애저 펑션 인스턴스를 운영하면서 커스텀 도메인을 연결하고 SSL 인증서를 붙이고 수시로 변하는 공개 IP 주소를 관리하는 방법에 대해 알아본다.
+이 시리즈에서는 애저 펑션 인스턴스를 운영하면서 사용자 지정 도메인을 연결하고, SSL 인증서를 붙이고, 수시로 변하는 공개 IP 주소를 관리하는 방법에 대해 알아본다.
 
 * ***애저 펑션에 APEX 도메인을 연결하는 세 가지 방법***
 * 애저 펑션에 Let's Encrypt 인증서 자동으로 연동하기
 * 애저 펑션에 할당된 공개 IP 주소를 DNS에 자동으로 업데이트하기
+* 애저 펑션 배포 프로필 없이 깃헙 액션으로 배포하기
 
-[애저 펑션][az func] 인스턴스가 하나 있다. 당신의 고객은 이 애저 펑션 인스턴스에 커스텀 도메인을 연결하고 싶어한다. 만약 커스텀 도메인이 `api.contoso.com`이라면 DNS의 CNAME 레코드를 변경하면 되는지라 큰 문제가 없다. 그런데, APEX 도메인을 연결하고 싶어한다면 어떻게 할까?
+[애저 펑션][az func] 인스턴스가 하나 있다. 당신의 고객은 이 애저 펑션 인스턴스에 사용자 지정 도메인을 연결하고 싶어한다. 만약 사용자 지정 도메인이 `api.contoso.com`이라면 DNS의 CNAME 레코드를 변경하면 되는지라 큰 문제가 없다. 그런데, APEX 도메인을 연결하고 싶어한다면 어떻게 할까?
 
 > APEX 도메인, 루트 도메인 등은 모두 같은 표현으로 `contoso.com`과 같은 도메인을 가리킬 때 사용한다.
 
@@ -59,7 +60,7 @@ fullscreen: true
 
 https://gist.github.com/justinyoo/8f4f33645adf7426969855b29171e91a?file=01-set-azwebapp.ps1&highlights=7
 
-여기서 명심해야 할 부분이 하나 있다. 위에 입력한 명령어의 `-HostNames` 파라미터에는 커스텀 도메인 뿐만 아니라 기존에 기본값으로 주어지는 도메인까지 모두 포함시켜야 한다 (line #7). 그렇지 않으면 기존에 이미 설정되어 있던 모든 도메인 네임 설정이 사라지고, 기본값으로 주어지는 도메인을 삭제할 수 없다는 경고 메시지를 받게 된다.
+여기서 명심해야 할 부분이 하나 있다. 위에 입력한 명령어의 `-HostNames` 파라미터에는 사용자 지정 도메인 뿐만 아니라 기존에 기본값으로 주어지는 도메인까지 모두 포함시켜야 한다 (line #7). 그렇지 않으면 기존에 이미 설정되어 있던 모든 도메인 네임 설정이 사라지고, 기본값으로 주어지는 도메인을 삭제할 수 없다는 경고 메시지를 받게 된다.
 
 ![][image-05]
 
@@ -74,7 +75,7 @@ https://gist.github.com/justinyoo/8f4f33645adf7426969855b29171e91a?file=01-set-a
 
 https://gist.github.com/justinyoo/8f4f33645adf7426969855b29171e91a?file=02-az-functionapp.sh
 
-[애저 파워셸][az pwsh]을 사용할 때와 다르게 이번에는 한 번에 하나씩 도메인을 추가할 수 있다. 그리고, 기존에 추가했던 커스텀 도메인은 사라지지 않고 그대로 남아있다.
+[애저 파워셸][az pwsh]을 사용할 때와 다르게 이번에는 한 번에 하나씩 도메인을 추가할 수 있다. 그리고, 기존에 추가했던 사용자 지정 도메인은 사라지지 않고 그대로 남아있다.
 
 
 ## ARM 템플릿으로 등록하기 ##
@@ -89,7 +90,9 @@ https://gist.github.com/justinyoo/8f4f33645adf7426969855b29171e91a?file=04-add-h
 
 ---
 
-지금까지, 세 가지 방법을 이용해서 APEX 도메인을 [애저 펑션][az func] 인스턴스에 연결하는 방법에 대해 알아 보았다. 일반적인 사용자 케이스로만 보면 애저 펑션은 커스텀 도메인을 연결할 일이 없거나, 있어도 루트 도메인으로 연결할 일이 거의 없다고 판단했는지, 애저 포탈에서는 루트 도메인 등록 자체를 할 수 없게 막아두었다. 하지만, [애저 파워셸][az pwsh] 또는 [애저 CLI][az cli]를 사용한다거나 ARM 템플릿을 사용하는 방식을 이용하면 루트 도메인을 등록할 수 있다. 만약 여러분의 고객 중 하나가 동일한 요구사항이 있다면 이 포스트가 도움이 되기를 바란다.
+지금까지, 세 가지 방법을 이용해서 APEX 도메인을 [애저 펑션][az func] 인스턴스에 연결하는 방법에 대해 알아 보았다. 일반적인 사용자 케이스로만 보면 애저 펑션은 사용자 지정 도메인을 연결할 일이 없거나, 있어도 루트 도메인으로 연결할 일이 거의 없다고 판단했는지, 애저 포탈에서는 루트 도메인 등록 자체를 할 수 없게 막아두었다. 하지만, [애저 파워셸][az pwsh] 또는 [애저 CLI][az cli]를 사용한다거나 ARM 템플릿을 사용하는 방식을 이용하면 루트 도메인을 등록할 수 있다. 만약 여러분의 고객 중 하나가 동일한 요구사항이 있다면 이 포스트가 도움이 되기를 바란다.
+
+다음 포스트에서는 이 사용자 지정 도메인에 [Let's Encrypt][letsencrypt]로 생성한 SSL 인증서를 연결하는 방법에 대해 알아보기로 하자.
 
 
 [image-01]: https://sa0blogs.blob.core.windows.net/aliencube/2020/10/3-ways-mapping-apex-domains-to-azure-functions-01-ko.png
@@ -99,9 +102,10 @@ https://gist.github.com/justinyoo/8f4f33645adf7426969855b29171e91a?file=04-add-h
 [image-05]: https://sa0blogs.blob.core.windows.net/aliencube/2020/10/3-ways-mapping-apex-domains-to-azure-functions-05-ko.png
 [image-06]: https://sa0blogs.blob.core.windows.net/aliencube/2020/10/3-ways-mapping-apex-domains-to-azure-functions-06-ko.png
 
-[post 1]: /ko/2020/10/14/tbp/
-[post 2]: /ko/2020/10/14/tbp/
+[post 1]: /ko/2020/10/07/3-ways-mapping-apex-domains-to-azure-functions/
+[post 2]: /ko/2020/10/14/lets-encrypt-ssl-certificate-on-azure-functions/
 [post 3]: /ko/2020/10/21/tbp/
+[post 4]: /ko/2020/10/28/tbp/
 
 [az func]: https://docs.microsoft.com/ko-kr/azure/azure-functions/functions-overview?WT.mc_id=aliencubeorg-blog-juyoo
 [az portal]: https://azure.microsoft.com/ko-kr/features/azure-portal/?WT.mc_id=aliencubeorg-blog-juyoo
@@ -110,3 +114,5 @@ https://gist.github.com/justinyoo/8f4f33645adf7426969855b29171e91a?file=04-add-h
 
 [gh azcli]: https://github.com/Azure/azure-cli/issues/14142#issuecomment-676539150
 [gh bicep]: https://github.com/azure/bicep
+
+[letsencrypt]: https://letsencrypt.org/
