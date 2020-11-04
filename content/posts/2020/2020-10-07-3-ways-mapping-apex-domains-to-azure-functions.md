@@ -18,7 +18,7 @@ fullscreen: true
 * ***애저 펑션에 APEX 도메인을 연결하는 세 가지 방법***
 * [애저 펑션에 Let's Encrypt 인증서 자동으로 연동하기][post 2]
 * [애저 펑션의 IP주소 변경시 깃헙 액션을 통해 DNS와 SSL 인증서를 자동으로 갱신하기][post 3]
-* 애저 펑션 배포 프로필 없이 깃헙 액션으로 배포하기
+* [애저 펑션 배포 프로필 없이 깃헙 액션으로 배포하기][post 4]
 
 [애저 펑션][az func] 인스턴스가 하나 있다. 당신의 고객은 이 애저 펑션 인스턴스에 사용자 지정 도메인을 연결하고 싶어한다. 만약 사용자 지정 도메인이 `api.contoso.com`이라면 DNS의 CNAME 레코드를 변경하면 되는지라 큰 문제가 없다. 그런데, APEX 도메인을 연결하고 싶어한다면 어떻게 할까?
 
@@ -105,7 +105,7 @@ https://gist.github.com/justinyoo/8f4f33645adf7426969855b29171e91a?file=04-add-h
 [post 1]: /ko/2020/10/07/3-ways-mapping-apex-domains-to-azure-functions/
 [post 2]: /ko/2020/10/14/lets-encrypt-ssl-certificate-on-azure-functions/
 [post 3]: /ko/2020/10/28/updating-azure-dns-and-ssl-certificate-on-azure-functions-via-github-actions/
-[post 4]: /ko/2020/10/28/tbp/
+[post 4]: /ko/2020/11/05/deploying-azure-functions-via-github-actions-without-publish-profile/
 
 [az func]: https://docs.microsoft.com/ko-kr/azure/azure-functions/functions-overview?WT.mc_id=aliencubeorg-blog-juyoo
 [az portal]: https://azure.microsoft.com/ko-kr/features/azure-portal/?WT.mc_id=aliencubeorg-blog-juyoo

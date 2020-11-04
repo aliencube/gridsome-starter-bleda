@@ -18,7 +18,7 @@ fullscreen: true
 * [애저 펑션에 APEX 도메인을 연결하는 세 가지 방법][post 1]
 * ***애저 펑션에 Let's Encrypt 인증서 자동으로 연동하기***
 * [애저 펑션의 IP주소 변경시 깃헙 액션을 통해 DNS와 SSL 인증서를 자동으로 갱신하기][post 3]
-* 애저 펑션 배포 프로필 없이 깃헙 액션으로 배포하기
+* [애저 펑션 배포 프로필 없이 깃헙 액션으로 배포하기][post 4]
 
 [지난 포스트][post 1]에서는 [애저 펑션][az func] 인스턴스에 루트 도메인 혹은 APEX 도메인을 연결하는 방법에 대해 알아봤다면, 이번에는 [Let's Encrypt][letsencrypt]에서 발행하는 SSL 인증서를 연동해서 사용자 지정 도메인에 대해 HTTPS 커넥션을 가능하게끔 해 보기로 한다.
 
@@ -140,7 +140,7 @@ fullscreen: true
 [post 1]: /ko/2020/10/07/3-ways-mapping-apex-domains-to-azure-functions/
 [post 2]: /ko/2020/10/14/lets-encrypt-ssl-certificate-on-azure-functions/
 [post 3]: /ko/2020/10/28/updating-azure-dns-and-ssl-certificate-on-azure-functions-via-github-actions/
-[post 4]: /ko/2020/10/28/tbp/
+[post 4]: /ko/2020/11/05/deploying-azure-functions-via-github-actions-without-publish-profile/
 
 [az func]: https://docs.microsoft.com/ko-kr/azure/azure-functions/functions-overview?WT.mc_id=aliencubeorg-blog-juyoo
 [az func mi]: https://docs.microsoft.com/ko-kr/azure/app-service/overview-managed-identity?tabs=dotnet&WT.mc_id=aliencubeorg-blog-juyoo
