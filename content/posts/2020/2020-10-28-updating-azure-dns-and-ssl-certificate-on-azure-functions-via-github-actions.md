@@ -18,7 +18,7 @@ fullscreen: true
 * [애저 펑션에 APEX 도메인을 연결하는 세 가지 방법][post 1]
 * [애저 펑션에 Let's Encrypt 인증서 자동으로 연동하기][post 2]
 * ***애저 펑션의 IP주소 변경시 깃헙 액션을 통해 DNS와 SSL 인증서를 자동으로 갱신하기***
-* 애저 펑션 배포 프로필 없이 깃헙 액션으로 배포하기
+* [애저 펑션 배포 프로필 없이 깃헙 액션으로 배포하기][post 4]
 
 [지난 포스트][post 2]에서는 [Let's Encrypt][letsencrypt]에서 발행하는 SSL 인증서를 사용자 지정 APEX 도메인에 연결했다면, 이번에는 [애저 펑션][az func] 인스턴스의 인바운드 IP가 변할 때 마다 [깃헙 액션][gh actions]을 이용해서 이를 자동으로 DNS에 반영하고, SSL 인증서를 갱신하는 방법에 대해 알아보기로 한다.
 
@@ -159,7 +159,7 @@ https://gist.github.com/justinyoo/20017fe33f1d70fb8a6531e71c3e615c?file=14-githu
 
 ---
 
-지금까지 [깃헙 액션][gh actions]을 이용해서 주기적으로 [애저 펑션][az func]의 인바운드 IP 주소를 확인한 후, IP 주소 변경 사항을 [애저 DNS][az dns]의 A 레코드에 반영시킨 후, SSL 인증서를 갱신하고 마지막으로 애저 펑션의 인증서와 동기화하는 작업에 대해 알아보았다. 다음 포스트에서는 애저 펑션 앱을 깃헙 액션을 통해 배포할 때 배포 프로필 없이 하는 방법에 대해 알아보기로 한다.
+지금까지 [깃헙 액션][gh actions]을 이용해서 주기적으로 [애저 펑션][az func]의 인바운드 IP 주소를 확인한 후, IP 주소 변경 사항을 [애저 DNS][az dns]의 A 레코드에 반영시킨 후, SSL 인증서를 갱신하고 마지막으로 애저 펑션의 인증서와 동기화하는 작업에 대해 알아보았다. [다음 포스트][post 4]에서는 애저 펑션 앱을 깃헙 액션을 통해 배포할 때 배포 프로필 없이 하는 방법에 대해 알아보기로 한다.
 
 
 [image-01]: https://sa0blogs.blob.core.windows.net/aliencube/2020/10/updating-azure-dns-and-ssl-certificate-on-azure-functions-via-github-actions-01.png
@@ -174,7 +174,7 @@ https://gist.github.com/justinyoo/20017fe33f1d70fb8a6531e71c3e615c?file=14-githu
 [post 1]: /ko/2020/10/07/3-ways-mapping-apex-domains-to-azure-functions/
 [post 2]: /ko/2020/10/14/lets-encrypt-ssl-certificate-on-azure-functions/
 [post 3]: /ko/2020/10/28/updating-azure-dns-and-ssl-certificate-on-azure-functions-via-github-actions/
-[post 4]: /ko/2020/10/28/tbp/
+[post 4]: /ko/2020/11/05/deploying-azure-functions-via-github-actions-without-publish-profile/
 
 [az func]: https://docs.microsoft.com/ko-kr/azure/azure-functions/functions-overview?WT.mc_id=devops-10318-juyoo
 
