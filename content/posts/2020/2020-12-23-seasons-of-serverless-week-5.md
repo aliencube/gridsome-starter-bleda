@@ -160,9 +160,9 @@ https://youtu.be/AJlCv2pAc8g
 
 [devto sos]: https://dev.to/azure/azure-advocates-seasons-of-serverless-join-our-virtual-festive-potluck-53m6
 [devto sos week1]: https://dev.to/azure/seasonsofserverless-solution-1-developing-the-perfect-holiday-turkey-2p3f
-[devto sos week2]: https://dev.to/azure/seasonsofserverless-solution-2-developing-lovely-ladoos-3ggh
-[devto sos week3]: https://dev.to/azure/week-3
-[devto sos week4]: https://dev.to/azure/week-4
+[devto sos week2]: https://dev.to/azure/seasonsofserverless-solution-2-developing-lovely-ladoos-41h9
+[devto sos week3]: https://dev.to/azure/seasonsofserverless-solution-3-the-longest-kebab-3pe1
+[devto sos week4]: https://dev.to/azure/seasonsofserverless-solution-4-a-big-barbecue-4d5e
 [devto sos week6]: https://dev.to/azure/week-6
 [devto sos week7]: https://dev.to/azure/week-7
 
