@@ -50,6 +50,29 @@ fullscreen: true
 
 일반적인 CI/CD 환경에서 애저 이벤트그리드 토픽을 생성할 때에는 [ARM 템플릿][az evtgrd arm topic]을 이용하면 쉽다. 하지만, 이벤트그리드 구독을 생성하는 [ARM 템플릿][az evtgrd arm sub]은 내가 생성한 이벤트그리드 토픽을 지정할 수 없기 때문에 여기서는 사용할 수 없다. 대신, [애저 CLI][az cli]를 사용해서 내가 지정한 토픽에 대해 구독을 생성하면 된다.
 
+---
+
+***추가:***
+
+정확하게는 이벤트그리드 구독 리소스를 생성하면서 토픽을 지정할 수 있는 방법이 사실 두 가지가 있다.
+
+### 스코프 지정하기 (권장하는 방법) ###
+
+위에 언급한 이벤트그리드 구독용 [ARM 템플릿][az evtgrd arm sub]을 사용하기 위해서는 `scope` 속성값을 지정해 주면 된다 (line #7). ARM 템플릿을 [bicep][az bicep]으로 구현하면 아래와 같다.
+
+https://gist.github.com/justinyoo/8865213b31baeda9f7c1ad258351a039?file=06-az-eventgrid-event-subscription-create-1.bicep&highlights=7
+
+
+### 하위 리소스 타입 지정하기 (권장하지는 않지만 허용되는 방법) ###
+
+또는 아래와 같이 하위 리소스 타입으로 구현을 해도 된다. 이 떄는 `scope` 속성값이 필요하진 않지만, 리소스 타입과 이름을 좀 더 번거롭게 정해줘야 한다 (line #6-7).
+
+https://gist.github.com/justinyoo/8865213b31baeda9f7c1ad258351a039?file=07-az-eventgrid-event-subscription-create-2.bicep&highlights=6-7
+
+위와 같은 방식으로 애저 이벤트그리드 구독 리소스를 프로비저닝해도 되지만, 이 포스트는 애저 CLI에 초점을 맞추도록 하자.
+
+---
+
 
 ## 애저 CLI 사전 준비사항 ##
 
@@ -97,6 +120,8 @@ https://gist.github.com/justinyoo/8865213b31baeda9f7c1ad258351a039?file=05-one-l
 [az cli extensions]: https://docs.microsoft.com/ko-kr/cli/azure/azure-cli-extensions-list?WT.mc_id=devops-12244-juyoo
 [az cli extensions eventgrid]: https://github.com/Azure/azure-cli-extensions/tree/master/src/eventgrid
 [az cli extensions logic]: https://github.com/Azure/azure-cli-extensions/tree/master/src/logic
+
+[az bicep]: https://github.com/Azure/bicep
 
 [az logapp]: https://docs.microsoft.com/ko-kr/azure/logic-apps/logic-apps-overview?WT.mc_id=devops-12244-juyoo
 [az logapp sas]: https://docs.microsoft.com/ko-kr/azure/logic-apps/logic-apps-securing-a-logic-app?WT.mc_id=devops-12244-juyoo#generate-shared-access-signatures-sas
