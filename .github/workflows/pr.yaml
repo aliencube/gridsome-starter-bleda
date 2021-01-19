@@ -38,11 +38,21 @@ jobs:
       with:
         markdown: '${{ toJSON(steps.prbody.outputs.value) }}'
 
+    - name: Check the frontmatter outputs
+      shell: bash
+      run: |
+        echo ${{ toJSON(steps.frontmatter.outputs.jsonised) }} | jq "."
+        echo ${{ toJSON(steps.frontmatter.outputs.jsonised) }} | jq -r ".schedule"
+        echo ${{ toJSON(steps.frontmatter.outputs.jsonised) }} | jq -r ".slug"
+        echo ${{ toJSON(steps.frontmatter.outputs.jsonised) }} | jq -r ".twitter"
+        echo ${{ toJSON(steps.frontmatter.outputs.jsonised) }} | jq -r ".facebook"
+        echo ${{ toJSON(steps.frontmatter.outputs.jsonised) }} | jq -r ".linkedin"
+
     - name: Get publish schedule
       id: schedule
       shell: bash
       run: |
-        schedule=$(echo '${{ steps.frontmatter.outputs.jsonised }}' | jq ".schedule" -r | sed 's!\+00\:00!+09:00!g')
+        schedule=$(TZ=Asia/Seoul gdate --date $(echo ${{ toJSON(steps.frontmatter.outputs.jsonised) }} | jq -r ".schedule") --iso-8601=s)
         echo ::set-output name=value::$schedule
 
     # - name: Get owner and repository
