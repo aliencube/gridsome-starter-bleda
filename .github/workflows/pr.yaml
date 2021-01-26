@@ -52,7 +52,7 @@ jobs:
       id: schedule
       shell: bash
       run: |
-        schedule=$(TZ=Asia/Seoul gdate --date $(echo ${{ toJSON(steps.frontmatter.outputs.jsonised) }} | jq -r ".schedule") --iso-8601=s)
+        schedule=$(TZ=Asia/Seoul date --date $(echo ${{ toJSON(steps.frontmatter.outputs.jsonised) }} | jq -r ".schedule") --iso-8601=s)
         echo ::set-output name=value::$schedule
 
     # - name: Get owner and repository
