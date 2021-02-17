@@ -15,14 +15,15 @@ jobs:
     - name: Checkout the repo
       uses: actions/checkout@v2
 
-    - uses: actions/setup-node@v2
+    - name: Install node.js SDK
+      uses: actions/setup-node@v2
       with:
         node-version: '12'
 
     - name: Install Netlify CLI
       shell: bash
       run: |
-        sudo npm install -g netlify-cli
+        sudo npm install --unsafe-perm=true -g netlify-cli
 
     - name: Install npm packages
       shell: bash
