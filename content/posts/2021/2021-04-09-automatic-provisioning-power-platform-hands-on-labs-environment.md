@@ -21,13 +21,29 @@ fullscreen: true
 
 각각의 방법은 저마다 장단점이 있게 마련인데, 대략 아래와 같이 정리할 수 있을 것이다.
 
-1. 첫번째 방법은 진행자 입장에서는 가장 편리한 방법이다. 이미 실습자의 환경이 구성되어 있기 때문이다. 하지만, 실습자 개개인이 속한 테넌트마다 구성이 다를 수 있으므로 파워 플랫폼 실습에 적합한지 아닌지 알 수가 없다. 실습 동안 권한 문제라든가 다양한 문제를 겪을 가능성이 농후한 편이다.
-2. 두번째 방법은 진행자 입장에서는 편리할 수도 있고 아닐 수도 있다. 우선 환경 구성 자체를 실습자에게 위임하는 과정만 놓고 보자면 실습자는 편리할 수도 있겠지만, 그 환경 구성을 위한 가이드 문서를 꼼꼼하게 작성해서 전달해야 한다. 아무리 자세하게 가이드를 제공한다고 하더라도, 실습자 개개인의 컴퓨터 활용 능력에 따라 환경 구성이 손쉬울 수도 있고 아닐 수도 있다. 결국 가이드 문서대로 되었다고 가정할 수 없다.
-3. 마지막 방법은 진행자가 모두 사전에 구성을 해 놓는 방법인데, 실습자 입장에서는 실습에 집중할 수 있으니 아주 편리하다. 반면에 진행자 입장에서는 이를 매번 수동으로 설정한다고 생각하면 굉장히 끔찍한 일이다.
+1. **첫번째 방법**은 진행자 입장에서는 가장 편리한 방법이다. 이미 실습자의 환경이 구성되어 있기 때문이다. 하지만, 실습자 개개인이 속한 테넌트마다 구성이 다를 수 있으므로 파워 플랫폼 실습에 적합한지 아닌지 알 수가 없다. 실습 동안 권한 문제라든가 다양한 문제를 겪을 가능성이 농후한 편이다.
+2. **두번째 방법**은 진행자 입장에서는 편리할 수도 있고 아닐 수도 있다. 우선 환경 구성 자체를 실습자에게 위임하는 과정만 놓고 보자면 실습자는 편리할 수도 있겠지만, 그 환경 구성을 위한 가이드 문서를 꼼꼼하게 작성해서 전달해야 한다. 아무리 자세하게 가이드를 제공한다고 하더라도, 실습자 개개인의 컴퓨터 활용 능력에 따라 환경 구성이 손쉬울 수도 있고 아닐 수도 있다. 결국 가이드 문서대로 되었다고 가정할 수 없다.
+3. **마지막 방법**은 진행자가 모두 사전에 구성을 해 놓는 방법인데, 실습자 입장에서는 실습에 집중할 수 있으니 아주 편리하다. 반면에 진행자 입장에서는 이를 매번 수동으로 설정한다고 생각하면 굉장히 끔찍한 일이다.
 
 따라서, 이 포스트에서는 핸즈온랩 실습 진행자 관점에서 최초 수동으로 해야만 하는 부분을 제외하고는 모두 스크립트 한 번 실행으로 환경 설정을 최대한 자동화하는 방법에 대해 알아보기로 한다.
 
 > 이 포스트에서 사용한 파워셸 스크립트는 [이 리포지토리][gh sample]에서 다운로드 받을 수 있다.
+
+
+## 명령어 하나로 환경 설정하기 ##
+
+편의상 여기서는 아래와 같은 내용으로 테넌트를 생성했다고 가정한다.
+
+* 테넌트 이름: `powerplatformhandsonlab`
+* 테넌트 URL: `powerplatformhandsonlab.onmicrosoft.com`
+* 관리자 이메일: `admin@powerplatformhandsonlab.onmicrosoft.com`
+* 관리자 패스워드: `Pa$$W0rd!@#$`
+
+이 정보를 이용해서, 한 번에 환경 설정을 하려면 어떻게 하면 될까? 여기 전체 [파워셸 스크립트][gh sample code]가 있으니 이걸 이용해 아래와 같이 명령어를 실행시키면 된다.
+
+https://gist.github.com/justinyoo/4cba9e122dfdb5684cd432c072b36b3d?file=15-set-environment.ps1
+
+이게 된다고? 하나씩 살펴보기로 하자.
 
 
 ## Microsoft 365 테넌트 생성 ##
@@ -40,19 +56,25 @@ fullscreen: true
 
 ![Microsoft 365 E5 평가판 가입 화면][image-02]
 
-> 편의상 여기서는 아래와 같은 내용으로 테넌트를 생성했다고 가정한다.
-> 
-> * 테넌트 이름: `powerplatformhandsonlab`
-> * 테넌트 URL: `powerplatformhandsonlab.onmicrosoft.com`
-> * 관리자 이메일: `admin@powerplatformhandsonlab.onmicrosoft.com`
-> * 관리자 패스워드: `Pa$$W0rd!@#$`
-
 이제 테넌트가 만들어졌으니 실제로 실습 환경을 파워셸로 구성해 보자. **참고로 아래에서 진행한 모든 파워셸 명령어는 관리자 권한의 파워셸 콘솔 안에서 실행시켜야 한다.**
 
 
-## AzureAD 파워셸 모듈 설치 ##
+## 프로비저닝 순서 ##
 
-> `AzureAD` 모듈을 사용하기 위해서는 Windows 환경의 파워셸 5.1 버전이 필요하다. 파워셸 6 이상의 버전은 지원하지 않는다. 사용 환경에 대해서는 [파워셸을 통해 Microsoft 365에 연결하기][m365 powershell connect] 페이지를 참조한다.
+환경 구성을 위한 순서가 딱히 정해져 있지는 않다. 하지만, 아래 순서대로 하는 것을 권장하는 편인데, 파워 앱 모듈과 애저 AD 모듈 사이에 호환성이 없어지는 부분이 하나 있기 때문이다.
+
+1. Microsoft Dataverse 데이터베이스 초기화
+1. 사용자 계정 추가
+1. Microsoft 365 권한 부여
+1. 라이센스 부여
+1. 애저 권한 부여
+
+만약에 첫번째 Microsoft Dataverse 데이터베이스 초기화를 가장 먼저 하지 않고 사용자 계정 추가 이후에 진행한다면 에러가 생긴다. 어떤 에러가 생기는 지는 아래에서 다시 다루도록 한다.
+
+> **NOTE**: `AzureAD` 모듈을 사용하기 위해서는 Windows 환경의 파워셸 5.1 버전이 필요하다. 파워셸 6 이상의 버전은 지원하지 않는다. 사용 환경에 대해서는 [파워셸을 통해 Microsoft 365에 연결하기][m365 powershell connect] 페이지를 참조한다.
+
+
+## AzureAD 파워셸 모듈 설치 ##
 
 Microsoft 365 테넌트에 사용자 계정을 추가하기 위해서는 먼저 [`AzureAD` 모듈][psgallery azuread]을 설치해야 한다. 이 포스트를 쓰는 현재 최신 버전은 `2.0.2.130`이다. 아래와 같이 `Install-Module` 명령어를 사용하면 되는데, 맨 마지막의 `-Force -AllowClobber` 옵션을 주면 동일한 버전이 이미 설치가 되어 있을 경우에도 별다른 경고 메시지 없이 재설치한다.
 
@@ -171,6 +193,7 @@ https://gist.github.com/justinyoo/4cba9e122dfdb5684cd432c072b36b3d?file=14-new-a
 [image-05]: https://sa0blogs.blob.core.windows.net/aliencube/2021/04/automatic-provisioning-power-platform-hands-on-labs-environment-05-ko.png
 
 [gh sample]: https://github.com/devkimchi/PowerPlatform-Hands-on-Lab-Environment-Automatic-Provsioning
+[gh sample code]: https://github.com/devkimchi/PowerPlatform-Hands-on-Lab-Environment-Automatic-Provsioning/blob/main/AzureAD/Set-Environment.ps1
 
 [pp]: https://powerplatform.microsoft.com/ko-kr/?WT.mc_id=power-23654-juyoo
 [pp dataverse]: https://docs.microsoft.com/ko-kr/powerapps/maker/data-platform/data-platform-intro?WT.mc_id=power-23654-juyoo
