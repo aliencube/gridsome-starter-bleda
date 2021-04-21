@@ -15,12 +15,13 @@ fullscreen: true
 
 이 시리즈를 통해 프로젝트 Bicep과 ARM 템플릿 검사도구, 그리고 이를 적용한 GitHub 액션을 다뤄보도록 하자.
 
-* [프로젝트 Bicep 맛보기][post prev]
+* [프로젝트 Bicep 맛보기][post 1]
 * ***GitHub 액션과 ARM 템플릿 검사도구를 이용한 Bicep 코드 품질 테스트***
+* [애저 Bicep 되짚어보기][post 3]
 
 ARM 템플릿을 만들고 난 이후에는 이 템플릿이 제대로 만들어 진 것인지 혹은 실제로 작동을 할 것인지 등에 대해 검증을 해야 한다. 이 ARM 템플릿 유효성 검사를 위해 예전에 [Pester][pester]를 이용한 ARM 템플릿 테스팅 시리즈를 영문으로 포스팅했던 적이 있다([#1][post pester 1], [#2][post pester 2]). 하지만 이 방법은 실제 리소스를 프로비저닝하지는 않지만, 일단은 애저에 로그인을 해야 하는 단점이 있다. 만약 로그인을 하지 않고도 내가 작성한 ARM 템플릿의 유효성 검사를 할 수 있다면 어떨까?
 
-[지난 포스트][post prev]에서는 [Bicep 프로젝트][gh bicep]와 이를 이용해 ARM 템플릿을 손쉽게 생성하는 방법에 대해 알아 보았다. 이번 포스트에서는 이 Bicep으로 자동 생성한 ARM 템플릿을 [ARM 템플릿 검사도구 (ARM Template Toolkit; ARM-TTK)][az arm ttk]를 이용해 유효성 검사를 진행하고, 이를 [GitHub 액션][gh actions]을 이용해 CI/CD 파이프라인에 적용시켜 보도록 한다.
+[지난 포스트][post 1]에서는 [Bicep 프로젝트][gh bicep]와 이를 이용해 ARM 템플릿을 손쉽게 생성하는 방법에 대해 알아 보았다. 이번 포스트에서는 이 Bicep으로 자동 생성한 ARM 템플릿을 [ARM 템플릿 검사도구 (ARM Template Toolkit; ARM-TTK)][az arm ttk]를 이용해 유효성 검사를 진행하고, 이를 [GitHub 액션][gh actions]을 이용해 CI/CD 파이프라인에 적용시켜 보도록 한다.
 
 > 이 포스트에 쓰인 Bicep 파일은 이곳 [GitHub 리포지토리][gh sample]에서 다운로드 받을 수 있다.
 
@@ -87,7 +88,8 @@ https://gist.github.com/justinyoo/0acf46566623e346553b5dabe5c1fe5b?file=03-githu
 [image-02]: https://sa0blogs.blob.core.windows.net/aliencube/2020/09/github-actions-and-arm-template-toolkit-to-test-bicep-codes-02.png
 [image-03]: https://sa0blogs.blob.core.windows.net/aliencube/2020/09/github-actions-and-arm-template-toolkit-to-test-bicep-codes-03.png
 
-[post prev]: /ko/2020/09/09/bicep-sneak-peek/
+[post 1]: /ko/2020/09/09/bicep-sneak-peek/
+[post 3]: /ko/2021/04/21/bicep-refreshed/
 [post pester 1]: https://devkimchi.com/2018/01/22/testing-arm-templates-with-pester/
 [post pester 2]: https://devkimchi.com/2018/07/12/testing-arm-templates-with-pester-2/
 

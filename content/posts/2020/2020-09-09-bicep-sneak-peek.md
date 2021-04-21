@@ -16,7 +16,8 @@ fullscreen: true
 이 시리즈를 통해 프로젝트 Bicep과 ARM 템플릿 검사도구, 그리고 이를 적용한 GitHub 액션을 다뤄보도록 하자.
 
 * ***프로젝트 Bicep 맛보기***
-* [GitHub 액션과 ARM 템플릿 검사도구를 이용한 Bicep 코드 품질 테스트][post next]
+* [GitHub 액션과 ARM 템플릿 검사도구를 이용한 Bicep 코드 품질 테스트][post 2]
+* [애저 Bicep 되짚어보기][post 3]
 
 애저에 리소스를 프로비저닝하기 위해서는 몇 가지 방법이 있다. 그 중 하나가 바로 [ARM 템플릿][az arm template]을 사용하는 것이다. 그런데, 이 ARM 템플릿은 약간의 러닝 커브가 있고, 템플릿의 구조 자체가 복잡해서 최초 작성시에 시간이 오래 걸리는 편이다. 이를 위해 다양한 베스트 프랙티스가 생겼지만, 여전히 최초 작성시 시간이 많이 걸리는 것은 사실이다.
 
@@ -94,9 +95,10 @@ https://gist.github.com/justinyoo/f3605100c5bfe7f7c7bd32f2d5fd1eb2?file=08-build
 
 ---
 
-지금까지 ARM 템플릿의 DSL인 [Bicep][gh bicep]의 초기 프리뷰 버전에 대해 살펴보았다. Bicep을 다뤄본 첫 인상은 꽤 사용하기 쉬워졌고, 템플릿 작성 경험이 좋아지겠다는 사실이다. 이를 통해 이 글을 읽는 여러분들 역시 애저 ARM 템플릿의 개발 경험이 좀 더 나아지길 바란다. [다음 포스트][post next]에서는 이렇게 만들어진 Bicep 파일을 [ARM 템플릿 검사도구(ARM TTK)][az arm ttk]를 이용해 ARM 템플릿 자체에 대한 유효성 검사를 진행해 보도록 한다.
+지금까지 ARM 템플릿의 DSL인 [Bicep][gh bicep]의 초기 프리뷰 버전에 대해 살펴보았다. Bicep을 다뤄본 첫 인상은 꽤 사용하기 쉬워졌고, 템플릿 작성 경험이 좋아지겠다는 사실이다. 이를 통해 이 글을 읽는 여러분들 역시 애저 ARM 템플릿의 개발 경험이 좀 더 나아지길 바란다. [다음 포스트][post 2]에서는 이렇게 만들어진 Bicep 파일을 [ARM 템플릿 검사도구(ARM TTK)][az arm ttk]를 이용해 ARM 템플릿 자체에 대한 유효성 검사를 진행해 보도록 한다.
 
-[post next]: /ko/2020/09/30/github-actions-and-arm-template-toolkit-to-test-bicep-codes/
+[post 2]: /ko/2020/09/30/github-actions-and-arm-template-toolkit-to-test-bicep-codes/
+[post 3]: /ko/2021/04/21/bicep-refreshed/
 
 [gh sample]: https://github.com/devkimchi/LiveStream-VM-Setup-Sample/blob/main/bicep/azuredeploy.bicep
 [gh bicep]: https://github.com/Azure/bicep
