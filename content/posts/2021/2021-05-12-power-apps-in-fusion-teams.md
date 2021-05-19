@@ -20,7 +20,7 @@ fullscreen: true
 이 포스트에서는 Mallee Bulls Fitness 라는 가상의 피트니스 센터에서 회원들이 운동 일지 작성에 사용할 모바일 앱을 [파워 앱][pa]으로 개발하는 일련의 과정에 대해 시리즈로 다루도록 한다.
 
 * ***퓨전 개발팀의 파워 앱 개발 실사례***
-* 파워 앱의 종단간 데이터 흐름 실시간 추적
+* [파워 앱의 종단간 데이터 흐름 실시간 추적][post 2]
 * 파워 앱에 DevOps 적용하기
 
 > 이 포스트에 사용한 백엔드 API 샘플 코드는 이곳 [GitHub 리포지토리][gh sample]에서 다운로드 받을 수 있다.
@@ -128,7 +128,7 @@ CORS 설정이 끝난 후 파워 앱 스튜디오로 돌아와서 다시 사용�
 * 고객들은 좀 더 체계적인 운동 일지를 작성할 수 있게 되었고,
 * 이 데이터를 바탕으로 트레이너들은 좀 더 회원별로 개인화된 운동 루틴을 작성할 수 있게 되었다.
 
-이렇게 함으로써 회원과 피트니스 센터 모두에게 좀 더 나은 서비스를 제공할 수 있는 기반이 다져진 셈이다. 다음 포스트에서는 [애저 모니터][az monitor] 서비스를 이용해 파워 앱에서 데이터 저장소까지 데이터가 이동하면서 거쳐가는 경로들을 추적하는 과정에 대해 알아보기로 한다.
+이렇게 함으로써 회원과 피트니스 센터 모두에게 좀 더 나은 서비스를 제공할 수 있는 기반이 다져진 셈이다. [다음 포스트][post 2]에서는 [애저 모니터][az monitor] 서비스를 이용해 파워 앱에서 데이터 저장소까지 데이터가 이동하면서 거쳐가는 경로들을 추적하는 과정에 대해 알아보기로 한다.
 
 
 [image-01]: https://sa0blogs.blob.core.windows.net/aliencube/2021/05/power-apps-in-fusion-teams-01.png
@@ -146,6 +146,9 @@ CORS 설정이 끝난 후 파워 앱 스튜디오로 돌아와서 다시 사용�
 [image-13]: https://sa0blogs.blob.core.windows.net/aliencube/2021/05/power-apps-in-fusion-teams-13.png
 [image-14]: https://sa0blogs.blob.core.windows.net/aliencube/2021/05/power-apps-in-fusion-teams-14.png
 
+
+[post 1]: /ko/2021/05/12/power-apps-in-fusion-teams/
+[post 2]: /ko/2021/05/19/tracing-end-to-end-data-from-power-apps-to-azure-cosmos-db/
 
 [gh sample]: https://github.com/aliencube/GymLog
 [gh sample api routine]: https://github.com/aliencube/GymLog/blob/main/src/GymLog.FunctionApp/Triggers/RoutineHttpTrigges.cs
